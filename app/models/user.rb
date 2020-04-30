@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
     has_many :events #a organiser has created many events (**thru organisations?)
-    has_many :organisations, through: :events #volunteers have many organisations that they are a part of
-    has_one :organisation #an organisation held the event
+    has_many :organisations, through: :events #the events are run buy organisations that the organiser perhaps belongs to
+    
 end
