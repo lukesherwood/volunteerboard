@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
     has_many :events
     has_many :organisations, through: :events
+    belongs_to :event
+    has_one :organisation
 end

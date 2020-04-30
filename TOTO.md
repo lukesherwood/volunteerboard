@@ -1,6 +1,5 @@
 TODO:
 
-add requirements file to app
 Confirm models working correctly
 add JOBS table
 Add form pages (do I need simple form gem?)
