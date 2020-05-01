@@ -10,9 +10,29 @@
   </head>
 
   <body>
+    <div class="topnav">
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Events', events_path %>
+      <%= link_to 'Organisations', organisations_path %>
+    </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     
     <%= yield %>
+    <br>
+    <br>
   </body>
+  <footer>
+  <br>
+  <div class="bottomnav">
+  
+  <% if !user_signed_in? %>
+      <%= link_to 'Sign-in', new_user_session_path %>
+      <%= link_to 'Sign-up', new_user_registration_path %>
+  <% else %>
+  <%= link_to 'Sign-out', destroy_user_session_path %>
+  <%= link_to 'User Account', edit_user_registration_path %>
+  <% end%>
+    </div>
+  </footer>
 </html>
