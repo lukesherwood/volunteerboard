@@ -15,6 +15,11 @@
  */
 
 /* Add a background color to the top navigation */
+
+  p {
+    font-family: 'Lato', sans-serif;
+  }
+
 .topnav {
     background-color: rgb(173, 214, 241);
     overflow: hidden;
@@ -27,7 +32,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
   }
   
   /* Change the color of links on hover */
