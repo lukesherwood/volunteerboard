@@ -4,7 +4,7 @@ class CreateOrganisations < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :location
       t.text :mission
-
+      t.integer :owner_id
       t.timestamps
     end
   end
