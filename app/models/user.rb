@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-    belongs_to :organisation, optional:true #the events are run buy organisations that the organiser perhaps belongs to
+    belongs_to :organisation, optional:true 
     has_many :jobs
     has_many :events, through: :jobs
+    
 end
