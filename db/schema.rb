@@ -25,13 +25,13 @@ ActiveRecord::Schema.define(version: 2020_05_01_020600) do
 
   create_table "jobs", force: :cascade do |t|
     t.string "title"
-    t.integer "events_id", null: false
+    t.integer "event_id", null: false
     t.integer "user_id"
     t.string "description"
     t.boolean "assigned"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["events_id"], name: "index_jobs_on_events_id"
+    t.index ["event_id"], name: "index_jobs_on_event_id"
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
@@ -59,6 +59,6 @@ ActiveRecord::Schema.define(version: 2020_05_01_020600) do
   end
 
   add_foreign_key "events", "organisations"
-  add_foreign_key "jobs", "events", column: "events_id"
+  add_foreign_key "jobs", "events"
   add_foreign_key "jobs", "users"
 end

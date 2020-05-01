@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
     belongs_to :organisation, optional:true #the events are run buy organisations that the organiser perhaps belongs to
-    
+    has_many :jobs
+    has_many :events, through: :jobs
 end
