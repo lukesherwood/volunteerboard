@@ -1,7 +1,7 @@
 TODO:
 
 
-get all index pages working
+
 get show pages working
 new pages with forms
 edit pages

@@ -1,24 +1,26 @@
-<h2>Welcome to the Volunteer Board</h2>
+<h1>Welcome to the Volunteer Board</h1>
 
-<p>Check out our upcoming events</p>
+<p><strong>Check out our upcoming events</strong></p>
+
 <ul>
 <% @events.each do |event|%>
-<li>
-<h1><%= event.name %></h1>
-<h3>by: <%= event.organisation.name %></h3>
-<br>
-<%= event.organisation.mission %>
-<br>
-<%= event.date %>
-<br>
-<%= event.location %>
-<br>
-<%= event.information %>
-
-<% event.jobs.each do |job| %>
-<%= link_to job.title, job_path(job) %>
-<% end%>
-</li>
+    <li>
+    <h2><%= event.name %></h2>
+    <h4>by: <%= event.organisation.name %></h4>
+    
+    <p><%= event.location %>
+    <br>
+    <%= event.datetime %>
+    <br>
+    <%= event.information %></p>
+    <h5>Jobs:<h5>
+    <ul>
+    <% event.jobs.each do |job| %>
+        <li><%= link_to job.title, job_path(job) %></li>
+    <% end%>
+    </ul>
+    </li>
 <% end%>
 
 </ul>
+
