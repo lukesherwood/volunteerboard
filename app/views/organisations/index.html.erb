@@ -11,13 +11,9 @@
         <ul><% org.events.each do |event|%>
             <li>
             <h4><%= event.name %></h4>
-            <p>
-            <%= event.datetime %>
-            </p>
-            <%= event.location %>
-            <p>
-            <%= event.information %>
-            </p>
+            <%= event.location %><br>
+            <%= event.datetime %></>
+            <p><%= event.information %></p>
             </li>
         <% end%>
         </ul> 

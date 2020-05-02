@@ -16,8 +16,16 @@
 
 /* Add a background color to the top navigation */
 
-  p {
+  * {
     font-family: 'Lato', sans-serif;
+  }
+
+  p {
+    font-size: small
+  }
+
+  ul {
+    list-style-type: none;
   }
 
 .topnav {
