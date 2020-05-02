@@ -1,22 +1,21 @@
 <ul>
 
 <% @events.each do |event|%>
-<li>
-<h1><%= event.name %></h1>
-<h3>by: <%= event.organisation.name %></h3>
-<br>
-<%= event.organisation.mission %>
-<br>
-<%= event.date %>
-<br>
-<%= event.location %>
-<br>
-<%= event.information %>
-
-<% event.jobs.each do |job| %>
-<%= link_to job.title, job_path(job) %>
-<% end%>
-</li>
+    <li>
+    <h1><%= event.name %></h1>
+    <h3>by: <%= event.organisation.name %></h3>
+    <p><%= event.organisation.mission %> </p>
+    
+    <p><%= event.datetime %></p>
+    
+    <p><%= event.location %> </p>
+    
+    <p><%= event.information %></p>
+    
+    <% event.jobs.each do |job| %>
+        <p><%= link_to job.title, job_path(job) %> </p>
+    <% end%>
+    </li>
 <% end%>
 
 </ul>
