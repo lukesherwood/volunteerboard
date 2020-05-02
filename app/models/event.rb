@@ -3,5 +3,6 @@ class Event < ApplicationRecord
   has_many :jobs
   has_many :volunteers, through: :jobs, foreign_key: "user_id"
   
+  validates :name, :date, :location,  presence: true
 end
 
