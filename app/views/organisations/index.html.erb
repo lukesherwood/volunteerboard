@@ -1,0 +1,27 @@
+
+<ul>
+    <% @orgs.each do |org|%>
+        <li>
+        <h1><%= org.name %> </h1>
+        
+        <h3><%= org.location %> </h3>
+        
+        <p><%= org.mission %> </p>
+        <br>
+        <ul>
+        <% org.events.each do |event|%>
+            <li>
+            <h3><%= event.name %></h3>
+            <p>
+            <%= event.date %>
+            </p>
+            <%= event.location %>
+            <p>
+            <%= event.information %>
+            </p>
+            </li>
+        <% end%>
+        </ul>
+        </li>
+    <% end%>
+</ul>
