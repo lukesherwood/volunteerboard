@@ -1,7 +1,7 @@
-<ul>
+<h1>Events</h1>
 
-<% @events.each do |event|%>
-    <li>
+<ul><% @events.each do |event|%>
+    <div><li>
     <h1><%= event.name %></h1>
     <h3>by: <%= event.organisation.name %></h3>
     <p><%= event.organisation.mission %> </p>
@@ -11,11 +11,13 @@
     <p><%= event.location %> </p>
     
     <p><%= event.information %></p>
-    
-    <% event.jobs.each do |job| %>
-        <p><%= link_to job.title, job_path(job) %> </p>
-    <% end%>
+    <div><h4>Jobs:</h4>
+    <ul><% event.jobs.each do |job| %>
+            <li><%= link_to job.title, job_path(job) %> </li>
+        <% end%>
+    </ul>
+    </div>
     </li>
 <% end%>
-
+</div>
 </ul>
