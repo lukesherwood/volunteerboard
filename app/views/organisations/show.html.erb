@@ -7,11 +7,11 @@
  <h3>Events:</h3>
     <ul><% @organisation.events.each do |event|%>
         <li>
-        <h4><%= link_to event.name, event_path(event) %></h4>
+        <h4><%= link_to event.name, organisation_event_path(@organisation, event) %></h4>
         <p><%= event.location %><br>
         <%= event.datetime %></p>
         <p><%= event.information %></p>
         </li>
     <% end%>
     </ul> 
-<%= link_to "Create New Event", new_event_path %>
+<%= link_to "Create New Event", new_organisation_event_path(@organisation) %>

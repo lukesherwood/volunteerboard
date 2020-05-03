@@ -12,7 +12,7 @@
     <p><%= event.information %></p>
     <div><h4>Jobs:</h4>
     <ul><% event.jobs.each do |job| %>
-            <li><%= link_to job.title, event_job_path(event, job) %> </li>
+            <li><%= link_to job.title, organisation_event_job_path(@organisation, event, job) %> </li>
         <% end%>
     </ul>
     </div>
@@ -21,4 +21,4 @@
 </div>
 </ul>
 
-<%= link_to "Create a new event", new_event_path %>
+<%= link_to "Create a new event", new_organisation_event_path %>

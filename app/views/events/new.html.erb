@@ -1,20 +1,8 @@
 <h1>Create a New Event</h1>
 
-<%= simple_form_for @event do |f| %>
-
-<%= hidden_field_tag 'event[organisation_id]', "#{@organisation}"%>
-
-<%= f.label :name %><br>
-<%= f.text_field :name %><br>
-
-<%= f.label :date %><br>
-<%= f.text_field :date %><br>
-
-<%= f.label :location %><br>
-<%= f.text_field :location %><br>
-
-<%= f.label :information %><br>
-<%= f.text_field :information %><br>
-
-<%= f.submit value:"Create Event"%> 
+<%= simple_form_for [@organisation, @event] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :date %>
+    <%= f.input :location %>
+    <%= f.button :submit, value: "Create Event" %>
 <% end%>

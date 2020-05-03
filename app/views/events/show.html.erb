@@ -3,8 +3,8 @@
 <h3>By: <%= @event.organisation.name %></h3>
 
 <p><%= @event.location %><br>
-<%= @event.date %><br>
+<%= @event.datetime %><br>
 <%= @event.information %><br>
 </p>
 
-<%= link_to "Edit Event", edit_event_path %>
+<%= link_to "Edit Event", edit_organisation_event_path(@event.organisation) %>

@@ -1,18 +1,20 @@
 class EventsController < ApplicationController
     
     def index
+        @organisation = Organisation.find(params[:id])
         @events = Event.all
     end
 
     def new
         @event = Event.new
-        @organisation = current_user.organisation.id
+        @organisation = Organisation.find(params[:organisation_id])
     end
 
     def create
-        @event = Event.new(event_params)
+        @organisation = Organisation.find(params[:organisation_id])
+        @event = @organisation.events.build(event_params)
         if @event.save
-            redirect_to event_path(@event)
+            redirect_to organisation_event_path(@organisation, @event)
         else
             #errors?
             render 'new'
@@ -26,7 +28,7 @@ class EventsController < ApplicationController
     private
 
     def event_params
-        params.require(:event).permit(:organisation_id, :name, :date, :location, :information)
+        params.require(:event).permit(:name, :date, :location, :information)
     end
 end
 
