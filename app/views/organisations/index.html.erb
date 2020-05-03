@@ -2,21 +2,9 @@
 <ul>
     <% @orgs.each do |org|%>
         <li>
-        <h2><%= org.name %> </h2>
-        
+        <h2><%= link_to org.name, organisation_path(org) %> </h2>
         <h4><%= org.location %> </h4>
-        
         <p><%= org.mission %> </p>
-        <h4>Events:</h4>
-        <ul><% org.events.each do |event|%>
-            <li>
-            <h5><%= event.name %></h5>
-            <p><%= event.location %><br>
-            <%= event.datetime %></p>
-            <p><%= event.information %></p>
-            </li>
-        <% end%>
-        </ul> 
         </li>
     <% end%>
 </ul>

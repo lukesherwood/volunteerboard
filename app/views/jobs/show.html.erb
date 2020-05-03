@@ -9,5 +9,5 @@
 <p><%= @job.description %> </p>
 
 <% if @job.assigned %>
-    <p>This job is Assigned to: <%= @job.user %></p>
+    <p>This job is Assigned to: <%= @job.volunteer.name %></p>
 <% end%>
