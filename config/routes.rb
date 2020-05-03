@@ -2,12 +2,22 @@ Rails.application.routes.draw do
   
   devise_for :users
   
-  resources :organisations  do
-    resources :events do
-      resources :jobs
-    end
+  resources :organisation do
+    resources :events, only: [:index] # greenpeace/events
+    resources :jobs, only: [:index] # greenpeace/jobs
   end
+
+  resources :events do
+    resources :jobs, only: [:index] # monday_event/jobs
+  end
+
+  resources :jobs
+  
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "welcome#home"
 end
+
+
+
+
