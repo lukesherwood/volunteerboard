@@ -1,15 +1,12 @@
 TODO:
 
-get show pages working
-    -org show page should have logo and cover photo style
-new pages with forms  --does events or jobs need to be nested within another or org
-    -simpleforms
-edit pages
-volunteer applies for a job and assigned = true.
+new pages with forms - org
+edit pages - move form to _form partial
+job show page has a link to apply to job volunteer applies for a job and assigned = true.
 jobs description needs to be text
 job pay band, hours required?
-
-
+-org show page should have logo and cover photo style, and website
+slugify urls?
 +++hard requirements+++
 one class level scope method (chainable) "query interface"
 use a nested resource from new, and from index or show
