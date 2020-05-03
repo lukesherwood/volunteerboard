@@ -1,0 +1,7 @@
+<%= simple_form_for [@event, @job] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :assigned, as: :radio_buttons, default: 0%>
+  <%= f.association :volunteer, hint: "If assigned then who is this job assigned to?" %>
+  <%= f.button :submit %>
+<% end %>

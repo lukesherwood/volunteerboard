@@ -1,1 +1,13 @@
-<%= @job.title %>
+<h1><%= @job.event.name %></h1>
+<p><%= @job.event.datetime %> </p>
+
+<p>By: <%= @job.event.organisation.name %></p>
+<br>
+<h3>Job Title:</h3>
+<p><%= @job.title %> </p>
+<h4>Job description:</h4>
+<p><%= @job.description %> </p>
+
+<% if @job.assigned %>
+    <p>This job is Assigned to: <%= @job.user %></p>
+<% end%>
