@@ -5,8 +5,8 @@
 <ul>
 <% @events.each do |event|%>
     <li>
-    <h2><%= event.name %></h2>
-    <h4>by: <%= event.organisation.name %></h4>
+    <h2><%= link_to event.name, event_path(event) %></h2>
+    <h4>by: <%= link_to event.organisation.name, organisation_path(event.organisation) %></h4>
     
     <p><%= event.location %>
     <br>

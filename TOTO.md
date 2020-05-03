@@ -1,6 +1,8 @@
 TODO:
 
+jobs index page
 new pages with forms - org
+nested index pages
 edit pages - move form to _form partial
 job show page has a link to apply to job volunteer applies for a job and assigned = true.
 jobs description needs to be text

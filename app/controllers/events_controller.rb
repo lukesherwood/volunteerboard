@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
     
     def index
-        @organisation = Organisation.find(params[:id])
         @events = Event.all
     end
 

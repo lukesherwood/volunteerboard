@@ -1,12 +1,10 @@
 <h1>Events</h1>
 
-<h1>Events</h1>
-
 <ul><% @events.each do |event|%>
     <div><li>
     <h1><%= event.name %></h1>
     <h3>by: 
-    <%= event.organisation.name %></h3>
+    <%= link_to event.organisation.name, organisation_path(event.organisation) %></h3>
     
     <p><%= event.datetime %></p>
     
