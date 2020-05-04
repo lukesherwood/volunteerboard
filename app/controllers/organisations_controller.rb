@@ -1,5 +1,6 @@
 class OrganisationsController < ApplicationController
-    before_action :set_organisation, only: [:show, :edit, :delete]
+    before_action :set_organisation, only: [:show, :edit, :delete, :update]
+
     def index
         @orgs = Organisation.all
     end
@@ -23,7 +24,14 @@ class OrganisationsController < ApplicationController
     end
 
     def edit
+    end
 
+    def update
+        if @organisation.update(organisation_params)
+            redirect_to organisation_path(@organisation.slug)
+        else
+            render 'edit'
+        end
     end
 
     def delete

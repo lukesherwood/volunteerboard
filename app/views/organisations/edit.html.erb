@@ -1,6 +1,5 @@
-<h1>Create a New Organisation</h1>
-
-<%= simple_form_for [@organisation] do |f| %>
+<h1>Edit Organisation</h1>
+<%= simple_form_for [@organisation], url: organisation_path(@organisation.slug) do |f| %>
     <%= f.input :name %>
     <%= f.input :location %>
     <%= f.input :mission %>
