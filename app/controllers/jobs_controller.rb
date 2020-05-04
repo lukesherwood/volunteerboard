@@ -1,12 +1,12 @@
 class JobsController < ApplicationController
-    
+    before_action :set_job, only: [:show, :edit, :update, :delete]
+    before_action :set_event, only: [:create, new, :edit]
+
     def show
-        @job = Job.find(params[:id])
     end
 
     def new
         @job = Job.new
-        @event = Event.find(params[:event_id])
     end
 
     def index
@@ -19,18 +19,35 @@ class JobsController < ApplicationController
     end
 
     def create
-        @event = Event.find(params[:event_id])
         @job = @event.jobs.build(job_params)
         if @job.save
-            redirect_to event_job_path(@event, @job)
+            redirect_to event_job_path(@job)
         else
-            #errors?
             render 'new'
+        end
+    end
+
+    def edit
+    end
+
+    def update
+        if @job.update(job_params)
+            redirect_to event_job_path(@job)
+        else
+            render 'edit'
         end
     end
 
     private
     
+    def set_job
+        @job = Job.find(params[:id])
+    end
+
+    def set_event
+        @event = Event.find(params[:event_id])
+    end
+
     def job_params
         params.require(:job).permit(:title, :event_id, :user_id, :description, :assigned)
     end

@@ -2,7 +2,7 @@ TODO:
 
 edit pages - move form to _form partial
 make use of nested index pages
-
+add links to edit
 
 job show page has a link to apply to job volunteer applies for a job and assigned = true.
 jobs description needs to be text

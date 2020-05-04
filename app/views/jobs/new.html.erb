@@ -1,9 +1,3 @@
 <h1>Create a New Job</h1>
 
-<%= simple_form_for [@event, @job] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description, as: :text %>
-  <%= f.input :assigned, as: :radio_buttons, checked: false %>
-  <%= f.association :volunteer, hint: "If assigned then who is this job assigned to?" %>
-  <%= f.button :submit, value: "Create Job" %>
-<% end %>
+<%= render 'form' %>

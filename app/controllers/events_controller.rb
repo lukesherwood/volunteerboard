@@ -30,7 +30,7 @@ class EventsController < ApplicationController
         if @event.update(event_params)
             redirect_to event_path(@event)
         else
-            render 'new'
+            render 'edit'
         end
     end
 
