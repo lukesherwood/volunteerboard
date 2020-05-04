@@ -1,10 +1,4 @@
 <h1>Create a New Event</h1>
 
-<%= simple_form_for [@event] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :date, value: Time.now %>
-    <%= f.input :location %>
-    <%= f.input :information %>
-    <%= f.association :organisation%>
-    <%= f.button :submit, value: "Create Event" %>
-<% end%>
+<%= render "form" %>
+

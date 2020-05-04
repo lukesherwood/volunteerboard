@@ -1,6 +1,5 @@
 TODO:
 
-new pages with forms - org
 edit pages - move form to _form partial
 make use of nested index pages
 
