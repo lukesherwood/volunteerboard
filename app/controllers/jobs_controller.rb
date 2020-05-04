@@ -5,9 +5,17 @@ class JobsController < ApplicationController
     end
 
     def new
-        @event = Event.find(params[:event_id])
-        @user = current_user
         @job = Job.new
+        @event = Event.find(params[:event_id])
+    end
+
+    def index
+        if params[:event_id]
+            @event = Event.find(params[:event_id])
+            @jobs = @event.jobs
+        else
+            @jobs = Job.all
+        end
     end
 
     def create
@@ -27,6 +35,3 @@ class JobsController < ApplicationController
         params.require(:job).permit(:title, :event_id, :user_id, :description, :assigned)
     end
 end
-
-#"job"=>{"title"=>"Worst Job Ever", "description"=>"Cleaning toilets after a big event", 
-#"assigned"=>"0", "event_id"=>"", "user_id"=>""}

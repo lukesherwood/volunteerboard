@@ -1,7 +1,9 @@
 TODO:
 
 jobs index page
+new event form need to change association to only be users organisation.
 new pages with forms - org
+
 nested index pages
 edit pages - move form to _form partial
 job show page has a link to apply to job volunteer applies for a job and assigned = true.

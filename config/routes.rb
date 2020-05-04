@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   end
 
   resources :events do
-    resources :jobs, only: [:index] # monday_event/jobs
+    resources :jobs #monday_janboree/jobs/1/edit..
   end
 
-  resources :jobs
+  get '/jobs', to: 'jobs#index'
   
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
