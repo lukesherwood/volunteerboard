@@ -6,7 +6,7 @@ class Event < ApplicationRecord
   validates :name, :date, :location,  presence: true
 
   def datetime
-    self.date.strftime("%l:%M %p %A %m %b %Y")
+    self.date.strftime("%m:%M %p, %A %e %B, %Y")
   end
 end
 
