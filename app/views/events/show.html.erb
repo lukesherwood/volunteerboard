@@ -7,4 +7,4 @@
 <%= @event.information %><br>
 </p>
 
-<%= link_to "Edit Event", edit_event_path %>
+<%= link_to "Edit Event", edit_event_path if current_user == @event.organisation.owner%>

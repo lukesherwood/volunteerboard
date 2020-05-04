@@ -11,3 +11,4 @@
 <% if @job.assigned %>
     <p>This job is Assigned to: <%= @job.volunteer.name %></p>
 <% end%>
+<%= link_to "Edit Job", edit_event_job_path %>

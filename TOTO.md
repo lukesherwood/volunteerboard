@@ -1,6 +1,5 @@
 TODO:
 
-edit pages - move form to _form partial
 make use of nested index pages
 add links to edit
 
