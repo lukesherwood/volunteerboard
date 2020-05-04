@@ -2,7 +2,13 @@ class EventsController < ApplicationController
     before_action :set_event, only: [:show, :edit, :update, :delete]
 
     def index
-        @events = Event.all
+        if params[:organisation_slug]
+            organisation = Organisation.find_by_slug(params[:organisation_slug])
+            @events = Event.all.find_all{|event| event.organisation_id == organisation.id}
+        else
+            @events = Event.all
+        end
+       
     end
 
     def new

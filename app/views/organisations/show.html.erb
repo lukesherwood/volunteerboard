@@ -4,14 +4,7 @@
 
  <p><%= @organisation.mission %></p>
 
- <h3>Events:</h3>
-    <ul><% @organisation.events.each do |event|%>
-        <li>
-        <h4><%= link_to event.name, event_path(event) %></h4>
-        <p> <%= event.location %><br>
-            <%= event.datetime %></p>
-        <p><%= event.information %></p>
-        </li>
-    <% end%>
-    </ul> 
+
+<%= link_to "See Our Events", organisation_events_path(@organisation.slug) %>
+ 
 <%= link_to "Create New Event", new_event_path %>
