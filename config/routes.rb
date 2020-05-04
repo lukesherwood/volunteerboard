@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   
-  resources :organisations do
+  resources :organisations, param: :slug do
     resources :events, only: [:index] # greenpeace/events
     resources :jobs, only: [:index] # greenpeace/jobs
   end

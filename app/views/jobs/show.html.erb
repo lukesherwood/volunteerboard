@@ -1,7 +1,7 @@
 <h1><%= @job.event.name %></h1>
 <p><%= @job.event.datetime %> </p>
 
-<p>By: <%= @job.event.organisation.name %></p>
+<p>By: <%= link_to @job.organisation.name, organisation_path(@job.organisation.slug)  %></p>
 <br>
 <h3>Job Title:</h3>
 <p><%= @job.title %> </p>

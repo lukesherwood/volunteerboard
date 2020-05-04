@@ -2,7 +2,7 @@
 <ul>
     <% @orgs.each do |org|%>
         <li>
-        <h2><%= link_to org.name, organisation_path(org) %> </h2>
+        <h2><%= link_to org.name, organisation_path(org.slug) %> </h2>
         <h4><%= org.location %> </h4>
         <p><%= org.mission %> </p>
         </li>

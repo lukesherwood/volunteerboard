@@ -1,6 +1,6 @@
 <h1><%= @event.name %> </h1>
 
-<h3>By: <%= @event.organisation.name %></h3>
+<h3>By: <%= link_to @event.organisation.name, organisation_path(@event.organisation.slug)  %></h3>
 
 <p><%= @event.location %><br>
 <%= @event.datetime %><br>
