@@ -3,6 +3,7 @@ class JobsController < ApplicationController
     before_action :set_event, only: [:create, new, :edit]
 
     def show
+        @organisation = @job.organisation
     end
 
     def new

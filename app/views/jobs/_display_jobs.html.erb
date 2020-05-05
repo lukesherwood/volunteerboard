@@ -1,0 +1,9 @@
+ <ul>
+    <% jobs.each do |job|%>
+        <li> 
+            <h3><%= link_to job.title, event_job_path(job.event, job) %></h3>
+            <p><%= job.description %></p>
+        </li>
+    <% end%>
+
+    </ul>
