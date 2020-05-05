@@ -1,14 +1,19 @@
 <h1>Jobs</h1>
 
-<ul>
-<% @jobs.each do |job|%>
-   <li> 
-        <h3><%= link_to job.title, event_job_path(job.event, job) %></h3>
-        <p><%= job.description %></p>
-    </li>
-<% end%>
 
-</ul>
-<% if @event%>
-    <%=link_to "Create a new Job", new_event_job_path(@event)%>
+<% if @jobs.empty?%>
+    <p>Sorry we don't have any jobs right now, check back later.</p>
+<% else%>
+    <ul>
+    <% @jobs.each do |job|%>
+    <li> 
+            <h3><%= link_to job.title, event_job_path(job.event, job) %></h3>
+            <p><%= job.description %></p>
+        </li>
+    <% end%>
+
+    </ul>
+    <% if @event%>
+        <%=link_to "Create a new Job", new_event_job_path(@event)%>
+    <% end%>
 <% end%>

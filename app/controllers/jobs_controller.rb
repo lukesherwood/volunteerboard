@@ -10,7 +10,10 @@ class JobsController < ApplicationController
     end
 
     def index
-        if params[:event_id]
+        if params[:organisation_slug]
+            @organisation = Organisation.find_by_slug(params[:organisation_slug])
+            @jobs = @organisation.jobs
+        elsif params[:event_id]
             @event = Event.find(params[:event_id])
             @jobs = @event.jobs
         else

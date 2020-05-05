@@ -3,12 +3,10 @@ class EventsController < ApplicationController
 
     def index
         if params[:organisation_slug]
-            organisation = Organisation.find_by_slug(params[:organisation_slug])
-            @events = Event.all.find_all{|event| event.organisation_id == organisation.id}
+            @events = Organisation.find_by_slug(params[:organisation_slug]).events
         else
             @events = Event.all
         end
-       
     end
 
     def new
@@ -25,11 +23,9 @@ class EventsController < ApplicationController
     end
 
     def show
-        #should link to organisation/events
     end
 
     def edit
-
     end
 
     def update
