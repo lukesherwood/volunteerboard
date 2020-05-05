@@ -31,6 +31,10 @@
     list-style-type: none;
   }
 
+  a {
+    text-decoration: none;
+  }
+
 .topnav {
     background-color: rgb(173, 214, 241);
     overflow: hidden;

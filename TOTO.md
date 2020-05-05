@@ -1,5 +1,5 @@
 TODO:
-change event/job iterating to be partial
+partials showing link to name?
 delete functions
 new jobs at same time as new event
 job show page has a link to apply to job volunteer applies for a job and assigned = true.

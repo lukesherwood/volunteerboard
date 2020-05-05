@@ -1,6 +1,6 @@
  <div class="org-display">
 
- <h1><%= org.name%></h1>
+ <h1><%= link_to org.name, organisation_path(org.slug)%></h1>
 
  <h3><%= org.location %></h3>
 
