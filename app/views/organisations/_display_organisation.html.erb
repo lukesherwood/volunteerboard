@@ -5,4 +5,6 @@
  <h3><%= org.location %></h3>
 
  <p><%= org.mission %></p>
+
+ <%= link_to "Edit Organisation", edit_organisation_path(org.slug) if current_user == org.owner%>
  </div>

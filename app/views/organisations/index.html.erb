@@ -3,7 +3,7 @@
     <% @orgs.each do |org|%>
         <li>
         <%= render 'display_organisation', org: org %>
-        <%= link_to "Edit Organisation", edit_organisation_path(org.slug) if current_user == org.owner%>
+        
         </li>
     <% end%>
 </ul>

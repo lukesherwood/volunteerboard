@@ -1,6 +1,6 @@
 <%=  render 'display_organisation', org: @organisation%>
  
-<%= link_to "See Our Events", organisation_events_path(@organisation.slug) %><br>
-<%= link_to "See Our Jobs", organisation_jobs_path(@organisation.slug) %><br>
+<%= link_to "Our Events", organisation_events_path(@organisation.slug) %><br>
+<%= link_to "Our Jobs", organisation_jobs_path(@organisation.slug) %><br>
  
 <%= link_to "Create New Event", new_event_path %>
