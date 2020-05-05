@@ -11,4 +11,7 @@
 <% if @job.assigned %>
     <p>This job is Assigned to: <%= @job.volunteer.name %></p>
 <% end%>
-<%= link_to "Edit Job", edit_event_job_path %>
+
+<%= link_to "Edit Job", edit_event_job_path if current_user == @organisation.owner%> <br>
+<%= link_to "Delete Job", event_job_path, method:"DELETE", data: { confirm: 'Are you sure?' } if current_user == @organisation.owner%> <br>
+<%= link_to "Back to Event", event_jobs_path(@job.event) %>

@@ -1,8 +1,12 @@
  <ul>
     <% jobs.each do |job|%>
         <li> 
-            <h3><%= link_to job.title, event_job_path(job.event, job) %></h3>
+            <h1><%= link_to job.title, event_job_path(job.event, job) %></h1>
             <p><%= job.description %></p>
+            <% if current_user == job.organisation.owner %>
+             <%= link_to "Delete Job", event_job_path(job.event, job), method:"DELETE", data: { confirm: 'Are you sure?' }%> <br>
+             <%= link_to "Edit Job", edit_event_job_path(job.event, job) %>
+             <% end%>
         </li>
     <% end%>
 

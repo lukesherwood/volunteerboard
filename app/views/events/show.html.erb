@@ -7,6 +7,6 @@
         <p>Sorry we don't have any jobs right now, check back later. </p>
     <% end%>
 </div>
-
+<%= link_to "Add Job", new_event_job_path(@event) if current_user == @event.organisation.owner%><br>
 <%= link_to "Edit Event", edit_event_path if current_user == @event.organisation.owner%><br>
 <%= link_to "Delete Event", event_path, method:"DELETE", data: { confirm: 'Are you sure?' } if current_user == @event.organisation.owner%>
