@@ -4,6 +4,7 @@ class Organisation < ApplicationRecord
     has_many :volunteers, through: :events, foreign_key: "user_id"
     has_many :jobs, through: :events
     validates :name, :location,  presence: true
+    
 
     def slug
         self.name.downcase.strip.gsub(' ', '-')

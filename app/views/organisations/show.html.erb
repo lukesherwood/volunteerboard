@@ -1,10 +1,5 @@
- <h1><%= @organisation.name %> </h1>
-
- <h3><%= @organisation.location %></h3>
-
- <p><%= @organisation.mission %></p>
-
-
+<%=  render 'display_organisation', org: @organisation%>
+ 
 <%= link_to "See Our Events", organisation_events_path(@organisation.slug) %><br>
 <%= link_to "See Our Jobs", organisation_jobs_path(@organisation.slug) %><br>
  
