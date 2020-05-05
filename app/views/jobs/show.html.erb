@@ -1,12 +1,7 @@
-<h1><%= @job.event.name %></h1>
-<p><%= @job.event.datetime %> </p>
+<h1><%= @job.title %> </h1>
+<h3><%= @job.description %> </h3>
 
-<p>By: <%= link_to @organisation.name, organisation_path(@organisation.slug)  %></p>
-<br>
-<h3>Job Title:</h3>
-<p><%= @job.title %> </p>
-<h4>Job description:</h4>
-<p><%= @job.description %> </p>
+<h4>Event:<%= render '/events/display_event', event: @job.event %>
 
 <% if @job.assigned %>
     <p>This job is Assigned to: <%= @job.volunteer.name %></p>

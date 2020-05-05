@@ -1,12 +1,11 @@
 TODO:
-partials showing link to name?
-delete functions
 new jobs at same time as new event
 job show page has a link to apply to job volunteer applies for a job and assigned = true.
 job pay band, hours required?
 does nested index pages need separate controller method or sep view pages?
 
 Front-end
+links as sidebar functions for organiser owner
 -org show page should have logo and cover photo style, and website
 change slugs to friendly id gem?
 
