@@ -17,7 +17,6 @@ class EventsController < ApplicationController
     def create
         @event = Event.new(event_params)
         if @event.save
-            @job = @event.jobs.create(job_params)
             redirect_to event_path(@event)
         else
             render 'new'
@@ -31,9 +30,7 @@ class EventsController < ApplicationController
     end
 
     def update
-        #params[:event][:jobs_attributes]["0"][:id]
         if @event.update(event_params)
-            #need job to update here too
             redirect_to event_path(@event)
         else
             render 'edit'
