@@ -1,8 +1,14 @@
 <h1>Create a New Organisation</h1>
 
 <%= simple_form_for [@organisation] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :location %>
-    <%= f.input :mission %>
-    <%= f.button :submit %>
+  <div class="form-group">
+    <%= f.input :name, input_html: { class: 'form-control' }  %>
+    </div>
+    <div class="form-group">
+    <%= f.input :location, input_html: { class: 'form-control' } %>
+    </div>
+    <div class="form-group">
+    <%= f.input :mission, input_html: { class: 'form-control' } %>
+    </div>
+    <%= f.button :submit, class:"btn btn-primary" %>
 <% end %>
