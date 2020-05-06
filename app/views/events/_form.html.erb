@@ -4,5 +4,11 @@
     <%= f.input :location %>
     <%= f.input :information %>
     <%= f.association :organisation%>
+    <div class="new_job_form">
+    Create a new job for this event:
+    <%= f.simple_fields_for :jobs do |p| %>
+        <%= p.input :title, label:"Job Title" %>
+        <%= p.input :description, as: :text, label:"Job Description" %>
+    <% end%>
     <%= f.button :submit %>
 <% end%>

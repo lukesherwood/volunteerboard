@@ -11,11 +11,13 @@ class EventsController < ApplicationController
 
     def new
         @event = Event.new
+        @job = @event.jobs.build
     end
 
     def create
         @event = Event.new(event_params)
         if @event.save
+            @job = @event.jobs.create(job_params)
             redirect_to event_path(@event)
         else
             render 'new'
@@ -29,7 +31,9 @@ class EventsController < ApplicationController
     end
 
     def update
+        #params[:event][:jobs_attributes]["0"][:id]
         if @event.update(event_params)
+            #need job to update here too
             redirect_to event_path(@event)
         else
             render 'edit'
@@ -44,7 +48,7 @@ class EventsController < ApplicationController
     private
 
     def event_params
-        params.require(:event).permit(:organisation_id, :name, :date, :location, :information)
+        params.require(:event).permit(:organisation_id, :name, :date, :location, :information, jobs_attributes: [:id, :title, :event_id, :user_id, :description, :assigned])
     end
 
     def set_event
