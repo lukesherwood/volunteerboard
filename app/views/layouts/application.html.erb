@@ -4,37 +4,36 @@
     <title>Volunteerboard</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="topnav">
-      <%= link_to 'Home', root_path %>
-      <%= link_to 'Organisations', organisations_path %>
-      <%= link_to 'Events', events_path %>
-      <%= link_to 'Jobs', jobs_path %>
+    <div class="container">
+      <%= render 'shared/navigationbar' %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+      <br>
+      <br>
+      <div class="bottomnav">
+        <% if !user_signed_in? %>
+          <%= link_to 'Sign-in', new_user_session_path %>
+          <%= link_to 'Sign-up', new_user_registration_path %>
+        <% else %>
+        <%= link_to 'Sign-out', destroy_user_session_path %>
+        <%= link_to 'User Account', edit_user_registration_path %>
+      <% end%>
+      </div>
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     
-    <%= yield %>
     <br>
     <br>
   </body>
   <footer>
   <br>
-  <div class="bottomnav">
-  
-  <% if !user_signed_in? %>
-      <%= link_to 'Sign-in', new_user_session_path %>
-      <%= link_to 'Sign-up', new_user_registration_path %>
-  <% else %>
-  <%= link_to 'Sign-out', destroy_user_session_path %>
-  <%= link_to 'User Account', edit_user_registration_path %>
-  <% end%>
-    </div>
+ 
   </footer>
 </html>

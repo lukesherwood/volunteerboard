@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
     before_action :set_job, only: [:show, :edit, :update, :destroy]
-    before_action :set_event, only: [:index, :create, :new, :edit, :update]
+    before_action :set_event, only: [:create, :new, :edit, :update]
 
     def show
         @organisation = @job.organisation
