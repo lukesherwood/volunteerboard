@@ -4,11 +4,15 @@
     <%= f.input :location %>
     <%= f.input :information %>
     <%= f.association :organisation%>
-    <div class="new_job_form">
+    <div id='jobs'>
     Create a new job for this event:
-    <%= f.simple_fields_for :jobs do |p| %>
-        <%= p.input :title, label:"Job Title" %>
-        <%= p.input :description, as: :text, label:"Job Description" %>
+    <%= f.simple_fields_for :jobs do |job| %>
+        <%= render 'job_fields', f: job %>
     <% end%>
+    <div class='links'>
+        <%= link_to_add_association 'add jobs', f, :jobs %>
+    </div>
+    </div>
     <%= f.button :submit %>
 <% end%>
+ 

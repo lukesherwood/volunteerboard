@@ -2,11 +2,12 @@
 
 <ul><% @events.each do |event|%>
     <div><li>
-    <%= render 'display_event', event: event %>
+    <%= render 'display_event', event: event %> 
     <% if current_user == event.organisation.owner%>
     <%= link_to "Edit Event", edit_event_path(event) %> <br>
     <%= link_to "Delete Event", event_path(event), method: "DELETE", data: { confirm: 'Are you sure?' } %>
     <% end%>
+    <%= link_to "Hide", "", class: 'hide', data: {'js-hide-link' => true} %>
     </li>
 <% end%>
 </div>

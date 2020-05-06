@@ -1,8 +1,7 @@
 TODO:
-new jobs at same time as new event
+can you add multiple new jobs at once with a auto increasing field?
 job show page has a link to apply to job volunteer applies for a job and assigned = true.
 job pay band, hours required?
-does nested index pages need separate controller method or sep view pages?
 
 Front-end
 links as sidebar functions for organiser owner
