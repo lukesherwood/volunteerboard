@@ -11,29 +11,17 @@
   </head>
 
   <body>
-    <div class="container-xl">
-      <%= render 'shared/navigationbar' %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <div class="row">
-    <div class="col">
-      <%= yield %>
-    </div>
-      <br>
-      <br>
-      <div class="bottomnav fixed-bottom">
-        <% if !user_signed_in? %>
-          <%= link_to 'Sign-in', new_user_session_path %>
-          <%= link_to 'Sign-up', new_user_registration_path %>
-        <% else %>
-        <%= link_to 'Sign-out', destroy_user_session_path %>
-        <%= link_to 'User Account', edit_user_registration_path %>
-      <% end%>
+    <%= render 'shared/navigationbar' %>
+      <div class="container">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <div class="row">
+          <div class="col">
+          <%= yield %>
+          </div>
+        </div>
       </div>
-    </div>
-    
-    <br>
-    <br>
+    <%= render 'shared/bottombar' %>
   </body>
   <footer>
   <br>
