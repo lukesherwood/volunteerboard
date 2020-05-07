@@ -1,9 +1,14 @@
 TODO:
-add date/time picker
+
 job show page has a link to apply to job volunteer applies for a job and assigned = true.
 job pay band, hours required?
 
+
 Front-end
+remove old css
+background
+bootstrap for pages
+bootstrap alerts
 links as sidebar functions for organiser owner
 -org show page should have logo and cover photo style, and website
 change slugs to friendly id gem?
@@ -11,6 +16,9 @@ change slugs to friendly id gem?
 Authorisation
 new event form need to change association to only be users organisation.
 onmiauth logins
+
+too hard basket
+add date/time picker 
 
 +++Last+++
 30 min coding session record

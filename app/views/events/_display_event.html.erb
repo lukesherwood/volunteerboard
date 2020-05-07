@@ -1,7 +1,7 @@
-<h1><%= link_to event.name, event_path(event) %></h1>
+<h2><%= link_to event.name, event_path(event) %></h2>
     
-<h3>by: 
-<%= link_to event.organisation.name, organisation_path(event.organisation.slug) %></h3>
+<h4>by: 
+<%= link_to event.organisation.name, organisation_path(event.organisation.slug) %></h4>
 
 <p><%= event.datetime %></p>
 
