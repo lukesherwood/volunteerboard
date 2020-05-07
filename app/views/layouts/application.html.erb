@@ -11,18 +11,18 @@
     <%= javascript_include_tag "application" %>
   </head>
 
-  <body>
+  <body style="background-image: url('https://cdn.hipwallpaper.com/i/32/82/1gZVXJ.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <%= render 'shared/navigationbar' %>
-    <div class="view" style="background-image: url('https://cdn.hipwallpaper.com/i/32/82/1gZVXJ.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="view">
       <div class="container">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-        <div class="row">
-          <div class="col">
-          <%= yield %>
-          <br>
-          <br>
-          <br>
+        <div class="card">
+          <div class="card-body">
+            <%= yield %>
+            <br>
+            <br>
+            <br>
           </div>
         </div>
       </div>

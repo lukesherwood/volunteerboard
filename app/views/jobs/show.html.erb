@@ -1,19 +1,24 @@
 <h1><%= @job.title %> </h1>
+<h4>Event:  <%=link_to @event.name, event_path(@event) %> </h4>
+<h5>When:  <%= @event.datetime%> </h5>
 <br>
-<%= simple_form_for [@event, @job] do |f| %>
-  <%= f.hidden_field :assigned, value: true %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.button :submit, "Take this job", class:"btn btn-primary"  %>
-<% end %>
-<br>
-<h4><%= @job.description %> </h4>
-<br>
-<h3>Event:<%= render '/events/display_event', event: @job.event %> </h3>
-
-<% if @job.assigned %>
-    <p>This job is Assigned to: <%= @job.volunteer.name %></p>
+<% if !@job.assigned%>
+  <%= simple_form_for [@event, @job] do |f| %>
+    <%= f.hidden_field :assigned, value: true %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.button :submit, "Take this job", class:"btn btn-primary"  %>
+  <% end %>
 <% end%>
+<br>
+<% if @job.assigned && @job.volunteer%>
+    <p class="alert alert-warning">Sorry this job is already assigned to: <%= @job.volunteer.name %></p>
+<% end%>
+<h5><%= @job.description %> </h5>
+<br>
 
+
+<ul class="list-group list-group-horizontal-sm">
 <%= link_to "Edit Job", edit_event_job_path, class:"btn btn-outline-warning btn-sm" if current_user == @organisation.owner%> <br>
 <%= link_to "Delete Job", event_job_path, method:"DELETE", data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" if current_user == @organisation.owner%> <br>
-<%= link_to "Back to Event", event_jobs_path(@job.event), class:"btn btn-outline-secondary btn-sm" %>
+<%= link_to "Back to Event", event_path(@event), class:"btn btn-outline-secondary btn-sm" %>
+</ul>
