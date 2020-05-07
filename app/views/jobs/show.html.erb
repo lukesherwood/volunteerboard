@@ -1,12 +1,19 @@
 <h1><%= @job.title %> </h1>
-<h3><%= @job.description %> </h3>
-
-<h4>Event:<%= render '/events/display_event', event: @job.event %>
+<br>
+<%= simple_form_for [@event, @job] do |f| %>
+  <%= f.hidden_field :assigned, value: true %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.button :submit, "Take this job", class:"btn btn-primary"  %>
+<% end %>
+<br>
+<h4><%= @job.description %> </h4>
+<br>
+<h3>Event:<%= render '/events/display_event', event: @job.event %> </h3>
 
 <% if @job.assigned %>
     <p>This job is Assigned to: <%= @job.volunteer.name %></p>
 <% end%>
 
-<%= link_to "Edit Job", edit_event_job_path if current_user == @organisation.owner%> <br>
-<%= link_to "Delete Job", event_job_path, method:"DELETE", data: { confirm: 'Are you sure?' } if current_user == @organisation.owner%> <br>
-<%= link_to "Back to Event", event_jobs_path(@job.event) %>
+<%= link_to "Edit Job", edit_event_job_path, class:"btn btn-outline-warning btn-sm" if current_user == @organisation.owner%> <br>
+<%= link_to "Delete Job", event_job_path, method:"DELETE", data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" if current_user == @organisation.owner%> <br>
+<%= link_to "Back to Event", event_jobs_path(@job.event), class:"btn btn-outline-secondary btn-sm" %>

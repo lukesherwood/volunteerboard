@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
     before_action :set_job, only: [:show, :edit, :update, :destroy]
-    before_action :set_event, only: [:create, :new, :edit, :update]
+    before_action :set_event, only: [:show, :create, :new, :edit, :update]
 
     def show
         @organisation = @job.organisation
@@ -25,7 +25,7 @@ class JobsController < ApplicationController
     def create
         @job = @event.jobs.build(job_params)
         if @job.save
-            redirect_to event_job_path(@event, @job)
+            redirect_to event_path(@event)
         else
             render 'new'
         end
@@ -36,6 +36,7 @@ class JobsController < ApplicationController
 
     def update
         if @job.update(job_params)
+
             redirect_to event_job_path(@event, @job)
         else
             render 'edit'
