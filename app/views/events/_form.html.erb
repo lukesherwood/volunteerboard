@@ -4,11 +4,12 @@
     <%= f.input :location %>
     <%= f.input :information %>
     <%= f.association :organisation%>
-    <div id='jobs'>
-    <h4>Create a new job for this event:</h4>
-    <%= f.simple_fields_for :jobs do |job| %>
-        <%= render 'job_fields', f: job %>
-    <% end%>
+    <h4>Event Jobs:</h4>
+    <div class='jobs'>
+        <%= f.simple_fields_for :jobs do |job| %>
+            <%= render 'job_fields', f: job %>
+        <% end%>
+        <%= link_to_add_association 'Add Job', f, :jobs, data: { association_insertion_node: '.jobs', association_insertion_method: :append }   %>
     </div>
     <%= f.button :submit, class:"btn btn-primary" %>
 <% end%>

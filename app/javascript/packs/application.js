@@ -15,6 +15,23 @@ document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()
 })
+
+$(document).ready(function() {
+  $('#solicitations').bind('cocoon:before-insert', function(e,solicitation_to_be_added) {
+      solicitation_to_be_added.fadeIn('slow');
+  });
+
+  $('#solicitations').bind('cocoon:after-insert', function(e, added_solicitation) {
+      //added_solicitation.css("background","red");
+  });
+
+  $('#solicitations').bind('cocoon:before-remove', function(e, solicitation) {
+      $(this).data('remove-timeout', 1000);
+      solicitation.fadeOut('slow');
+  })
+
+});
+
  
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
