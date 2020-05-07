@@ -20,7 +20,7 @@
           Make a new...
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "Event", new_event_path, class:"dropdown-item" %>
+              <%= link_to "Event", new_event_path, class:"dropdown-item" if current_user.organisation %>
               <%= link_to "Organisation", new_organisation_path, class:"dropdown-item" %>
           </li>
         </ul>
