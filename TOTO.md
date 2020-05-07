@@ -1,5 +1,7 @@
 **TODO:**
 
+do you need to see /jobs jobs that are assigned?
+remove add, job functionality from jobs controller and routes?
 **Authorisation**
 new event form need to change association to only be users organisation.
 onmiauth logins

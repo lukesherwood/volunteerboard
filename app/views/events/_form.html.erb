@@ -3,7 +3,7 @@
     <%= f.input :date, value: Time.now %>
     <%= f.input :location %>
     <%= f.input :information %>
-    <%= f.association :organisation%>
+    <%= f.hidden_field :organisation_id, value: current_user.organisation.id %>
     <h4>Event Jobs:</h4>
     <div class='jobs'>
     <%= link_to_add_association 'Add Job', f, :jobs, data: { association_insertion_node: '.jobs', association_insertion_method: :append }, class:"btn btn-outline-primary"   %>

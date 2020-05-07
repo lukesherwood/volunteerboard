@@ -1,6 +1,6 @@
- <ul>
+ <ul class="list-group">
     <% jobs.each do |job|%>
-        <li> 
+        <li class="list-group-item"> 
             <h3><%= link_to job.title, event_job_path(job.event, job) %> 
             <% if job.assigned%>
                 <span class="badge badge-pill badge-secondary">Assigned</span></h3>
