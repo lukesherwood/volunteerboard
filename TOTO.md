@@ -1,10 +1,9 @@
 TODO:
-
-job show page has a link to apply to job volunteer applies for a job and assigned = true.
 job pay band, hours required?
 
 
 Front-end
+update devise views
 remove old css
 background
 bootstrap for pages

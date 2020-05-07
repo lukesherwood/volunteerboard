@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 
 import "bootstrap";
+import {} from 'jquery-ujs'
 import "../stylesheets/application"
 
 document.addEventListener("turbolinks:load", () => {
