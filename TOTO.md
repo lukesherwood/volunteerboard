@@ -1,5 +1,5 @@
 TODO:
-can you add multiple new jobs at once with a auto increasing field?
+add date/time picker
 job show page has a link to apply to job volunteer applies for a job and assigned = true.
 job pay band, hours required?
 
