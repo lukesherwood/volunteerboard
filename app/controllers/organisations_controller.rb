@@ -11,6 +11,7 @@ class OrganisationsController < ApplicationController
 
     def new
         @organisation = Organisation.new
+        authorize @organisation
     end
 
     def create
@@ -24,6 +25,7 @@ class OrganisationsController < ApplicationController
     end
 
     def edit
+        authorize @organisation
     end
 
     def update
@@ -36,7 +38,7 @@ class OrganisationsController < ApplicationController
     end
 
     def delete
-
+        authorize @organisation
     end
 
     private

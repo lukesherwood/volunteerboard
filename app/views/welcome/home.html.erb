@@ -6,7 +6,7 @@
 <% @events.each do |event|%>
     <li class="list-group-item">
     <h2><%= link_to event.name, event_path(event) %></h2>
-    <h4>by: <%= link_to event.organisation.name, organisation_path(event.organisation) %></h4>
+    <h4>by: <%= link_to event.organisation.name, organisation_path(event.organisation.slug) %></h4>
     
     <p><%= event.location %>
     <br>

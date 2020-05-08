@@ -11,11 +11,13 @@ class EventsController < ApplicationController
 
     def new
         @event = Event.new
+        authorize @event
         @job = @event.jobs.build
     end
 
     def create
         @event = Event.new(event_params)
+        authorize @event
         if @event.save
             redirect_to event_path(@event)
         else
@@ -27,6 +29,7 @@ class EventsController < ApplicationController
     end
 
     def edit
+        authorize @event
     end
 
     def update
@@ -39,6 +42,7 @@ class EventsController < ApplicationController
     end
 
     def destroy
+        authorize @event
         @event.destroy
         redirect_to events_path
     end
