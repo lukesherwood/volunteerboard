@@ -27,6 +27,7 @@ class OrganisationsController < ApplicationController
     end
 
     def update
+        authorize @organisation
         if @organisation.update(organisation_params)
             redirect_to organisation_path(@organisation.slug)
         else

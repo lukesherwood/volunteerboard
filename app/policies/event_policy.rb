@@ -7,6 +7,6 @@ class EventPolicy < ApplicationPolicy
     end
 
     def update?
-      @user = @event.organisation.owner
+      if @user == @event.organisation.owner
     end
 end
