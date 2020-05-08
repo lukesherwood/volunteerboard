@@ -1,10 +1,8 @@
 **TODO:**
 authorisation - 
-show jobs needs warning to display you are assigned this job success
-job show needs to show org .name
 do you need to see /jobs jobs that are assigned?
 remove add, job functionality from jobs controller and routes?
-go around website adding further instructions
+go around website adding further instructions and back buttons etc
 
 
 **Front-end**
