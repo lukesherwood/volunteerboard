@@ -11,7 +11,11 @@
 <% end%>
 <br>
 <% if @job.assigned && @job.volunteer%>
-    <p class="alert alert-warning">Sorry this job is already assigned to: <%= @job.volunteer.name %></p>
+    <% if @job.volunteer == current_user%>
+      <p class="alert alert-success">This job is assigned to: <%= @job.volunteer.name %></p>
+    <% else%>
+      <p class="alert alert-warning">Sorry this job is already assigned to: <%= @job.volunteer.name %></p>
+    <% end%>
 <% end%>
 <h5><%= @job.description %> </h5>
 <br>

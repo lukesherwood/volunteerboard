@@ -6,23 +6,28 @@
  
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+
          <li class="nav-item">
             <%= link_to "Organisations", organisations_path, class:"nav-link" %>
           </li>
+
           <li class="nav-item">
             <%= link_to "Events", events_path, class:"nav-link" %>
           </li>
+
           <li class="nav-item">
             <%= link_to "Jobs", jobs_path, class:"nav-link" %>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Make a new...
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "Event", new_event_path, class:"dropdown-item" if current_user.organisation %>
-              <%= link_to "Organisation", new_organisation_path, class:"dropdown-item" %>
-          </li>
+     
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Make a new...
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "Event", new_event_path, class:"dropdown-item" if current_user && current_user.organisation %>
+                <%= link_to "Organisation", new_organisation_path, class:"dropdown-item" %>
+            </li>
+     
         </ul>
         <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
