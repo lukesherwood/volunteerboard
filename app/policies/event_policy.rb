@@ -7,7 +7,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def new?
-    user.present?
+    return true if user.present? && user.organisation
   end
   
   def create?

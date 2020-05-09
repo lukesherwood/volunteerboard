@@ -7,7 +7,8 @@ class JobsController < ApplicationController
     end
 
     def new
-        @job = Job.new
+        @job = @event.jobs.build
+        authorize @job
     end
 
     def index
@@ -24,6 +25,7 @@ class JobsController < ApplicationController
 
     def create
         @job = @event.jobs.build(job_params)
+        authorize @job
         if @job.save
             redirect_to event_path(@event)
         else
@@ -32,11 +34,12 @@ class JobsController < ApplicationController
     end
 
     def edit
+        authorize @job
     end
 
     def update
+        authorize @job
         if @job.update(job_params)
-
             redirect_to event_job_path(@event, @job)
         else
             render 'edit'
@@ -44,6 +47,7 @@ class JobsController < ApplicationController
     end
 
     def destroy
+        authorize @job
         @job.destroy
         redirect_to event_jobs_path
     end
