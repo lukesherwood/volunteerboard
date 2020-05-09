@@ -1,6 +1,6 @@
 <h1>Events</h1>
 <br>
-<%= link_to "Create a new event", new_event_path, class:"btn btn-outline-primary btn-sm" if user_signed_in? && current_user.organisation%>
+<%= link_to "Create a new event", new_event_path, class:"btn btn-outline-primary btn-sm" if user_signed_in? && current_user == @organisation.owner%>
 <ul><% @events.each do |event|%>
     <div><li>
     <%= render 'display_event', event: event %> 

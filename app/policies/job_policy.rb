@@ -4,15 +4,15 @@ class JobPolicy < ApplicationPolicy
     def initialize(user, job)
     @user = user
     @job = job
-    @organisation = @job.event.organisation
+    @organisation = @job.organisation
     end
 
     def new?
-    return true if user.present? && user = @organisation.owner
+    return true if user.present? && user == @organisation.owner
     end
 
     def create?
-    return true if user = @event.organisation.owner
+    return true if user == @organisation.owner
     end
 
     def edit?

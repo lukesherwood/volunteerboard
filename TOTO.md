@@ -1,5 +1,5 @@
 **TODO:**
-authorisation - add policies for jobs, make all the policies police against unauth users
+authorization, can I remove logic from the views
 do you need to see /jobs jobs that are assigned?
 remove add, job functionality from jobs controller and routes?
 go around website adding further instructions and back buttons etc

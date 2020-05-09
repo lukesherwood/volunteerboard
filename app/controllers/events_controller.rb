@@ -3,7 +3,8 @@ class EventsController < ApplicationController
 
     def index
         if params[:organisation_slug]
-            @events = Organisation.find_by_slug(params[:organisation_slug]).events
+            @organisation = Organisation.find_by_slug(params[:organisation_slug])
+            @events = @organisation.events
         else
             @events = Event.all
         end
