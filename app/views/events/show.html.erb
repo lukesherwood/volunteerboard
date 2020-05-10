@@ -1,14 +1,16 @@
 <%= render 'display_event', event: @event %>
 
 <div><h2>Jobs:</h2>
-    <% if !@event.jobs.empty? %>
+    <% if @event.jobs.present? %>
         <%= render 'jobs/display_jobs', jobs: @event.jobs %>
     <% else%>
         <p>Sorry we don't have any jobs right now, check back later. </p>
     <% end%>
 </div>
-<div class="btn-group">
-<%= link_to "Add Job", new_event_job_path(@event), class:"btn btn-outline-primary" if current_user == @event.organisation.owner%><br>
-<%= link_to "Edit Event", edit_event_path, class:"btn btn-outline-warning" if current_user == @event.organisation.owner%><br>
-<%= link_to "Delete Event", event_path, method:"DELETE", data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" if current_user == @event.organisation.owner%>
-</div>
+<% if current_user == @event.organisation.owner %>
+    <div class="btn-group">
+        <%= link_to "Add Job", new_event_job_path(@event), class:"btn btn-outline-primary" %><br>
+        <%= link_to "Edit Event", edit_event_path, class:"btn btn-outline-warning" %><br>
+        <%= link_to "Delete Event", event_path, method:"DELETE", data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %>
+    </div>
+<% end%>
