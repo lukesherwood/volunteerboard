@@ -2,7 +2,7 @@ class Event < ApplicationRecord
   belongs_to :organisation #an organisation is holding the event
   has_many :jobs, dependent: :destroy
   has_many :volunteers, through: :jobs, foreign_key: "user_id"
-  accepts_nested_attributes_for :jobs, allow_destroy: true, reject_if: proc { |attributes| attributes['title'].blank? }
+  accepts_nested_attributes_for :jobs, allow_destroy: true
   
   validates :name, presence: true
   validates :date, presence: true

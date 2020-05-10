@@ -6,11 +6,14 @@
     <%= f.hidden_field :organisation_id, value: current_user.organisation.id %>
     <h4>Event Jobs:</h4>
     <div class='jobs'>
-    <%= link_to_add_association 'Add Job', f, :jobs, data: { association_insertion_node: '.jobs', association_insertion_method: :append }, class:"btn btn-outline-primary"   %>
         <%= f.simple_fields_for :jobs do |job| %>
             <%= render 'job_fields', f: job %>
         <% end%>
     </div>
+    <br>
+    <div class="btn-group">
+    <%= link_to_add_association 'Add Job', f, :jobs, data: { association_insertion_node: '.jobs', association_insertion_method: :append }, class:"btn btn-outline-primary"   %>
     <%= f.button :submit, class:"btn btn-primary" %>
+    </div>
 <% end%>
  
