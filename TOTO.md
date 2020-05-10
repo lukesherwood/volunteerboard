@@ -1,17 +1,17 @@
 **TODO:**
 authorization, can I remove logic from the views
 do you need to see /jobs jobs that are assigned?
-remove add, job functionality from jobs controller and routes?
+remove add, job functionality from jobs controller and routes? as well as event/job index?
 go around website adding further instructions and back buttons etc
 
 
 **Front-end**
-make nav bar bigger
 update devise views
 bootstrap alerts
-links as sidebar functions for organiser owner
+
 
 **extras**
+search function?
 add photo to user -from facebook?
 add further omniauths
 add date/time picker 

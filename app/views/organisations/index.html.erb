@@ -1,7 +1,8 @@
 <h1>Organisations</h1>
-<ul>
+<br>
+<ul class="list-group">
     <% @orgs.each do |org|%>
-        <li>
+        <li class="list-group-item"> 
         <%= render 'display_organisation', org: org %>
         
         </li>
