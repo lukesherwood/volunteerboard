@@ -19,7 +19,7 @@ class JobsController < ApplicationController
             @event = Event.find(params[:event_id])
             @jobs = @event.jobs
         else
-            @jobs = Job.all
+            @jobs = Job.available
         end
     end
 
@@ -47,7 +47,6 @@ class JobsController < ApplicationController
     end
 
     def destroy
-        authorize @job
         @job.destroy
         redirect_to event_jobs_path
     end
