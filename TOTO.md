@@ -1,10 +1,9 @@
 **TODO:**
 authorization, can I remove logic from the views
-do you need to see /jobs jobs that are assigned?
-remove add, job functionality from jobs controller and routes? as well as event/job index?
-go around website adding further instructions and back buttons etc
+go around website adding further instructions
 dont want to work this anymore not working if not org owner
 assigned should not be able to equal null!
+
 **Front-end**
 update devise views
 bootstrap alerts

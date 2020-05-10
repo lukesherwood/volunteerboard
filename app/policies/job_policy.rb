@@ -20,7 +20,7 @@ class JobPolicy < ApplicationPolicy
     end
 
     def update?
-    return true if user.present? && user == @organisation.owner
+    return true if user.present? 
     end
 
     def destroy?
