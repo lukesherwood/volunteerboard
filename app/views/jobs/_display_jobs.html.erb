@@ -1,4 +1,4 @@
- <ul class="list-group">
+<ul class="list-group">
     <% jobs.each do |job|%>
         <li class="list-group-item"> 
             <h3><%= link_to job.title, event_job_path(job.event, job) %> 
@@ -8,12 +8,11 @@
             
             <p><%= job.description %></p>
             <% if current_user == job.organisation.owner %>
-            <div class="btn-group list-group-horizontal-sm">
-                <%= link_to "Edit Job", edit_event_job_path(job.event, job), class:"btn btn-outline-warning btn-sm" %>
-                <%= link_to "Delete Job", event_job_path(job.event, job), method:"DELETE", data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" %> <br>
-             </div>
+                <div class="btn-group list-group-horizontal-sm">
+                    <%= link_to "Edit Job", edit_event_job_path(job.event, job), class:"btn btn-outline-warning btn-sm" %>
+                    <%= link_to "Delete Job", event_job_path(job.event, job), method:"DELETE", data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" %> <br>
+                </div>
              <% end%>
         </li>
     <% end%>
-
-    </ul>
+</ul>
