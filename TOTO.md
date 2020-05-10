@@ -1,7 +1,7 @@
 **TODO:**
+adding new job from event makes assigned Null
 authorization, can I remove logic from the views
 go around website adding further instructions
-dont want to work this anymore not working if not org owner
 assigned should not be able to equal null!
 
 **Front-end**
