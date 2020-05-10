@@ -1,0 +1,4 @@
+<%= simple_form_for [@event, @job] do |f| %>
+  <%= render 'events/job_fields', f: f %>
+  <%= f.button :submit, class:"btn btn-primary"  %>
+<% end %>
