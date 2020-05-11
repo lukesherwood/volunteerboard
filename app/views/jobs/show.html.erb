@@ -15,7 +15,7 @@
   <% end %>
 <% end%>
 
-<% if @job.assigned && @job.volunteer%>
+<% if @job.assigned%>
     <% if @job.volunteer == current_user%>
       <p class="alert alert-success">This job is assigned to: <%= @job.volunteer.name %></p>
       <%= simple_form_for [@event, @job] do |f| %>
@@ -31,8 +31,8 @@
 <br>
 
 <% if current_user == @organisation.owner %>
-<ul class="list-group list-group-horizontal-sm">
-<%= link_to "Edit Job", edit_event_job_path, class:"btn btn-outline-warning btn-sm" %> <br>
-<%= link_to "Delete Job", event_job_path, method:"DELETE", data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" %><br>
-</ul>
+  <ul class="list-group list-group-horizontal-sm">
+  <%= link_to "Edit Job", edit_event_job_path, class:"btn btn-outline-warning btn-sm" %> <br>
+  <%= link_to "Delete Job", event_job_path, method:"DELETE", data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" %><br>
+  </ul>
 <% end %>

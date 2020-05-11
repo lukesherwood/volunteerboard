@@ -1,8 +1,5 @@
 <h1>Create a New Organisation</h1>
-
+<br>
 <%= simple_form_for [@organisation] do |f| %>
-   <%= f.input :name %>
-    <%= f.input :location %>
-    <%= f.input :mission %>
-    <%= f.button :submit, class:"btn btn-primary" %>
+   <%= render 'organisation_fields', f: f %>
 <% end %>

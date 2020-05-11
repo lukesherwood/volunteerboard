@@ -1,7 +1,5 @@
 <h1>Edit Organisation</h1>
+<br>
 <%= simple_form_for [@organisation], url: organisation_path(@organisation.slug) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :location %>
-    <%= f.input :mission %>
-    <%= f.button :submit, class:"btn btn-primary" %>
+    <%= render 'organisation_fields', f: f %>
 <% end %>
