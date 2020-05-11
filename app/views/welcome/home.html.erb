@@ -3,24 +3,22 @@
 <p><strong>Check out our upcoming events</strong></p>
 
 <ul class="list-group">
-<% @events.each do |event|%>
+  <% @events.each do |event|%>
     <li class="list-group-item">
-    <h2><%= link_to event.name, event_path(event) %></h2>
-    <h4>by: <%= link_to event.organisation.name, organisation_path(event.organisation.slug) %></h4>
-    
-    <p><%= event.location %>
-    <br>
-    <%= event.datetime %>
-    <br>
-    <%= event.information %></p>
-    <h5>Jobs:<h5>
-    <ul class="list-group">
-    <% event.jobs.each do |job| %>
-        <li><%= link_to job.title, event_job_path(event, job), class:"list-group-item list-group-item-action" %></li>
-    <% end%>
-    </ul>
+      <h2><%= link_to event.name, event_path(event) %></h2>
+      <h4>by: <%= link_to event.organisation.name, organisation_path(event.organisation.slug) %></h4>
+      <p><%= event.location %>
+      <br>
+      <%= event.datetime %>
+      <br>
+      <%= event.information %></p>
+      <h5>Jobs:<h5>
+      <ul class="list-group">
+        <% event.jobs.each do |job| %>
+          <li><%= link_to job.title, event_job_path(event, job), class:"list-group-item list-group-item-action" %></li>
+        <% end%>
+      </ul>
     </li>
-<% end%>
-
+  <% end%>
 </ul>
 
