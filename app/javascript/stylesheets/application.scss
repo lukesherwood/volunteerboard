@@ -4,6 +4,14 @@
     @extend .alert-info
   }
   
-  .alert-alert {
+.alert-alert {
     @extend .alert-danger
   }
+
+.navbar-brand {
+    font-size: 2em;
+}
+
+.nav-top-link {
+    font-size: 1.4em;
+}

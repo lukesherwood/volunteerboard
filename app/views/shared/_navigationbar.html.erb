@@ -8,30 +8,26 @@
         <ul class="navbar-nav mr-auto">
 
          <li class="nav-item">
-            <%= link_to "Organisations", organisations_path, class:"nav-link" %>
+            <%= link_to "Organisations", organisations_path, class:"nav-link nav-top-link" %>
           </li>
 
           <li class="nav-item">
-            <%= link_to "Events", events_path, class:"nav-link" %>
+            <%= link_to "Events", events_path, class:"nav-link nav-top-link" %>
           </li>
 
           <li class="nav-item">
-            <%= link_to "Available Jobs", jobs_path, class:"nav-link" %>
-          </li>
-     
+            <%= link_to "Available Jobs", jobs_path, class:"nav-link nav-top-link" %>
+          <% if user_signed_in? %>
+            </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle nav-top-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Make a new...
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <%= link_to "Event", new_event_path, class:"dropdown-item" if current_user && current_user.organisation %>
+                <%= link_to "Event", new_event_path, class:"dropdown-item" if current_user.organisation %>
                 <%= link_to "Organisation", new_organisation_path, class:"dropdown-item" %>
             </li>
-     
+          <% end%>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
       </div>
 </nav>

@@ -1,13 +1,12 @@
 **TODO:**
+remove search function
 events breaks when not logged in
-search function?
 go around website adding further instructions
 add more fields to organisation, events or jobs? to make the website more realistic
-**Front-end**
-bootstrap alerts
+add tags/categories to jobs/events so can filter by tags?
 
 **extras**
-add date/time picker 
+add date/time picker
 -org show page should have logo and cover photo style, and website
 
 **+++Last+++**
