@@ -2,7 +2,6 @@
 go around website adding further instructions
 
 **Front-end**
-update devise views
 bootstrap alerts
 
 **extras**
