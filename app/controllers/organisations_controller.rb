@@ -12,6 +12,7 @@ class OrganisationsController < ApplicationController
     def new
         @organisation = Organisation.new
         authorize @organisation
+        @categories = ["environmental", "health", "animal welfare", "disability services", "homelessness"]
     end
 
     def create
@@ -25,6 +26,7 @@ class OrganisationsController < ApplicationController
     end
 
     def edit
+        @categories = ["environmental", "health", "animal welfare", "disability services", "homelessness"]
         authorize @organisation
     end
 
@@ -48,6 +50,6 @@ class OrganisationsController < ApplicationController
     end
 
     def organisation_params
-        params.require(:organisation).permit(:name, :location, :mission)
+        params.require(:organisation).permit(:name, :location, :mission, :category, :website, :contact_info)
     end
 end

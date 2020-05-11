@@ -1,13 +1,16 @@
 **TODO:**
-remove search function
-events breaks when not logged in
-go around website adding further instructions
-add more fields to organisation, events or jobs? to make the website more realistic
-add tags/categories to jobs/events so can filter by tags?
+about page, copyright etc at the bottom
+filter by location, add location options to event. also can add category for organisation. type of work - labour, admin etc, partime full time etc, evenings, days weekends etc
+register organisation at same time as log in?
 
-**extras**
-add date/time picker
--org show page should have logo and cover photo style, and website
+apply link takes to sign up if not logged in
+
+**extras for later**
+-org show page should have logo and cover photo style activestorage or paperclip
+https://medium.com/@anaharris/how-to-add-image-upload-functionality-to-your-rails-app-9f7fc3f3d042
+
+save or favourite job/organisation? then have your own page show favourites
+https://stackoverflow.com/questions/13240109/implement-add-to-favorites-in-rails-3-4
 
 **+++Last+++**
 30 min coding session record
