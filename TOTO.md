@@ -1,16 +1,14 @@
 **TODO:**
+events breaks when not logged in
+search function?
 go around website adding further instructions
-
+add more fields to organisation, events or jobs? to make the website more realistic
 **Front-end**
 bootstrap alerts
 
 **extras**
-search function?
-add photo to user -from facebook?
-add further omniauths
 add date/time picker 
 -org show page should have logo and cover photo style, and website
-change slugs to friendly id gem?
 
 **+++Last+++**
 30 min coding session record

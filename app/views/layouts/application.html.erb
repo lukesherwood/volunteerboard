@@ -15,8 +15,7 @@
     <%= render 'shared/navigationbar' %>
     <div class="view">
       <div class="container">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <%= render 'layouts/messages' %>
         <div class="card">
           <div class="card-body">
             <%= yield %>
