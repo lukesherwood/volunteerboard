@@ -4,8 +4,15 @@
 <h5>by: <%= @event.organisation.name%> </h5>
 <h5><%= @event.datetime%> </h5>
 <br>
+<h5>Location: <%= @job.location %> </h5>
+<br>
+<h5>Type of work: <%= @job.work_type %> </h5>
+<br>
+<h5>Time commitment required: <%= @job.commitment %> </h5>
+<br>
 <h5><%= @job.description %> </h5>
 <br>
+
 <% if user_signed_in? && !@job.assigned%>
   <%= simple_form_for [@event, @job] do |f| %>
     <%= f.hidden_field :assigned, value: true %>

@@ -12,6 +12,7 @@ class EventsController < ApplicationController
 
     def new
         @event = Event.new
+        @types = ["Labouring", "Admin", "IT", "Childcare", "Working with animals", "Aged care", "Gardening", "Marketing", "Disability Support"]
         authorize @event
         @job = @event.jobs.build
     end
@@ -30,6 +31,7 @@ class EventsController < ApplicationController
     end
 
     def edit
+        @types = ["Labouring", "Admin", "IT", "Childcare", "Working with animals", "Aged care", "Gardening", "Marketing", "Disability Support"]
         authorize @event
     end
 

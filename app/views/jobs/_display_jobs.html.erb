@@ -5,7 +5,11 @@
             <% if job.assigned%>
                 <span class="badge badge-pill badge-secondary">Assigned</span>
             <% end %></h3> 
-            
+            <p><strong>Location:</strong> <%= job.location %>
+            <br>
+            <strong>Work Type:</strong> <%= job.work_type %>
+            <br>
+            <strong>Required Commitment:</strong> <%= job.commitment %></p>
             <p><%= job.description %></p>
             <% if current_user == job.organisation.owner %>
                 <div class="btn-group list-group-horizontal-sm">
