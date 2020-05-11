@@ -1,11 +1,9 @@
 **TODO:**
-authorization, can I remove logic from the views
 go around website adding further instructions
 
 **Front-end**
 update devise views
 bootstrap alerts
-
 
 **extras**
 search function?

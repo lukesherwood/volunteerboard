@@ -96,6 +96,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-bootstrap-views (1.1.0)
     dotenv (2.7.5)
     dotenv-rails (2.7.5)
       dotenv (= 2.7.5)
@@ -275,6 +276,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   cocoon
   devise
+  devise-bootstrap-views
   dotenv-rails
   jbuilder (~> 2.7)
   jquery-rails
