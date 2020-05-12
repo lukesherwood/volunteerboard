@@ -13,6 +13,7 @@ class JobsController < ApplicationController
     end
 
     def index
+        @locations = Job.all.map{|job| job.location}.uniq!.compact
         if params[:organisation_slug]
             @organisation = Organisation.find_by_slug(params[:organisation_slug])
             @jobs = @organisation.jobs
@@ -29,6 +30,10 @@ class JobsController < ApplicationController
         render 'index'
     end
 
+    def index_location
+        raise params.inspect
+    end
+
     def create
         @job = @event.jobs.build(job_params)
         authorize @job
@@ -40,7 +45,6 @@ class JobsController < ApplicationController
     end
 
     def edit
-        
         authorize @job
     end
 
