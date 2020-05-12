@@ -1,11 +1,14 @@
 **TODO:**
-implement changes to jobs table into views
-filter by location, add location options to event. type of work - labour, admin etc, partime full time etc, evenings, days weekends etc
-register organisation at same time as log in?
-change event page to show the top 5 events from home page   -- Include a class level        ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+Jobs Index: Filter by: available (by default), location, type of work, commitment
+Events Index: Filter by: upcoming top 5 (default), location
+organisation index: Filter by: all(default), category, location
+-- Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+
 change home page to be a landing page/about page with instructions
 apply link takes to sign up if not logged in
-use helper methods for views?
+use helper methods for views? need to get rid of collection arrays
+register organisation at same time as log in?
+change bottom nav to be on right side of top?
 **extras for later**
 -org show page should have logo and cover photo style activestorage or paperclip
 https://medium.com/@anaharris/how-to-add-image-upload-functionality-to-your-rails-app-9f7fc3f3d042

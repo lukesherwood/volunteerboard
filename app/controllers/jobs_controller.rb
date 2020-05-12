@@ -1,13 +1,13 @@
 class JobsController < ApplicationController
     before_action :set_job, only: [:show, :edit, :update, :destroy]
     before_action :set_event, only: [:show, :create, :new, :edit, :update]
-
+    before_action :set_type, only: [:edit, :new]
+    
     def show
         @organisation = @job.organisation
     end
 
     def new
-        @types = ["Labouring", "Admin", "IT", "Childcare", "Working with animals", "Aged care", "Gardening", "Marketing", "Disability Support"]
         @job = @event.jobs.build
         authorize @job
     end
@@ -20,8 +20,13 @@ class JobsController < ApplicationController
             @event = Event.find(params[:event_id])
             @jobs = @event.jobs
         else
-            @jobs = Job.available
+            @jobs = Job.all
         end
+    end
+
+    def index_available
+        @jobs = Job.available
+        render 'index'
     end
 
     def create
@@ -35,7 +40,7 @@ class JobsController < ApplicationController
     end
 
     def edit
-        @types = ["Labouring", "Admin", "IT", "Childcare", "Working with animals", "Aged care", "Gardening", "Marketing", "Disability Support"]
+        
         authorize @job
     end
 
@@ -54,6 +59,10 @@ class JobsController < ApplicationController
     end
 
     private
+
+    def set_type
+        @types = ["Labouring", "Admin", "IT", "Childcare", "Working with animals", "Aged care", "Gardening", "Marketing", "Disability Support"]
+    end
     
     def set_job
         @job = Job.find(params[:id])

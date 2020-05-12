@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   
   
@@ -12,10 +12,11 @@ Rails.application.routes.draw do
     resources :jobs #monday_janboree/jobs/1/edit..
   end
 
-  get '/jobs', to: 'jobs#index'
+  resources :jobs, only: [:index]
 
+  get 'jobs/available', to: 'jobs#index_available'
+  
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "welcome#home"
 
   

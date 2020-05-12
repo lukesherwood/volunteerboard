@@ -8,7 +8,7 @@ class Job < ApplicationRecord
     validates :commitment, presence: true
     validates :volunteer, presence: { message: "must be provided if job is assigned" }, if: -> { assigned } 
     validates :volunteer, absence: { message: "must be blank if job is un-assigned" }, if: -> { !assigned } 
-    scope :available, -> { where(assigned: false) }
+    scope :available, -> { where(assigned: false)}
 
     def organisation
         self.event.organisation
