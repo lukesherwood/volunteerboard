@@ -26,6 +26,7 @@ class JobsController < ApplicationController
     end
 
     def index_available
+        @locations = Job.all.map{|job| job.location}.uniq!.compact        
         @jobs = Job.available
         render 'index'
     end
