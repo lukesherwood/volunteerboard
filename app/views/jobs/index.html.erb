@@ -2,10 +2,8 @@
 <br>
 <h3>Filter by:</h3>
 <%= link_to "Available Jobs", jobs_available_path %>
-<h5>Location:</h5>
-<% @locations.each do | location|%>
- <%= location %><br>
-<% end%>
+<br>
+<%= link_to "All Jobs", jobs_path %>
 <br>
 <% if @jobs.empty?%>
     <p>Sorry we don't have any jobs right now, check back later.</p>

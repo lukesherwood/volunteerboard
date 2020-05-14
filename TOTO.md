@@ -1,6 +1,5 @@
 **TODO:**
 change home page to be a landing page/about page with instructions
-apply link takes to sign up if not logged in
 use helper methods for views? need to get rid of collection arrays
 
 **extras for later**
