@@ -1,6 +1,4 @@
 **TODO:**
-change home page to be a landing page/about page with instructions
-use helper methods for views? need to get rid of collection arrays
 
 **extras for later**
 register organisation at same time as log in?

@@ -1,7 +1,6 @@
 class JobsController < ApplicationController
     before_action :set_job, only: [:show, :edit, :update, :destroy]
     before_action :set_event, only: [:show, :create, :new, :edit, :update]
-    before_action :set_type, only: [:edit, :new]
     
     def show
         @organisation = @job.organisation
@@ -13,7 +12,6 @@ class JobsController < ApplicationController
     end
 
     def index
-        @locations = Job.all.map{|job| job.location}.uniq!.compact
         if params[:organisation_slug]
             @organisation = Organisation.find_by_slug(params[:organisation_slug])
             @jobs = @organisation.jobs
@@ -25,14 +23,9 @@ class JobsController < ApplicationController
         end
     end
 
-    def index_available
-        @locations = Job.all.map{|job| job.location}.uniq!.compact        
+    def index_available      
         @jobs = Job.available
         render 'index'
-    end
-
-    def index_location
-        raise params.inspect
     end
 
     def create
@@ -64,10 +57,6 @@ class JobsController < ApplicationController
     end
 
     private
-
-    def set_type
-        @types = ["Labouring", "Admin", "IT", "Childcare", "Working with animals", "Aged care", "Gardening", "Marketing", "Disability Support"]
-    end
     
     def set_job
         @job = Job.find(params[:id])
