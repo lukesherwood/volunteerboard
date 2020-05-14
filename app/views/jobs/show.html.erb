@@ -4,40 +4,39 @@
 <h5>by: <%= @event.organisation.name%> </h5>
 <h5><%= @event.datetime%> </h5>
 <br>
-<h5>Location: <%= @job.location %> </h5>
+<h5>Location: <%= @job.location if @job.location%> </h5>
 <br>
-<h5>Type of work: <%= @job.work_type %> </h5>
+<h5>Type of work: <%= @job.work_type if @job.work_type%> </h5>
 <br>
-<h5>Time commitment required: <%= @job.commitment %> </h5>
+<h5>Time commitment required: <%= @job.commitment if @job.commitment%> </h5>
 <br>
 <h5><%= @job.description %> </h5>
 <br>
 
-<% if user_signed_in? && !@job.assigned%>
-  <%= simple_form_for [@event, @job] do |f| %>
-    <%= f.hidden_field :assigned, value: true %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.button :submit, "Take this job", class:"btn btn-primary"  %>
-    <br>
-  <% end %>
-<% end%>
-
-<% if user_signed_in? && @job.assigned%>
-    <% if @job.volunteer == current_user%>
+<% if !user_signed_in? %>
+  <%= link_to "Sign in or register to apply for this job", new_user_session_path %>
+<% elsif @job.assigned  %>
+  <% if current_user == @job.volunteer %>
       <p class="alert alert-success">This job is assigned to: <%= @job.volunteer.name %></p>
       <%= simple_form_for [@event, @job] do |f| %>
         <%= f.hidden_field :assigned, value: false %>
         <%= f.hidden_field :user_id, value: nil %>
         <%= f.button :submit, "Dont want to work this anymore?", class:"btn btn-danger", data: { confirm: 'Are you sure?' }  %>
       <% end %>
-    <% else%>
-      <p class="alert alert-warning">Sorry this job is already assigned to: <%= @job.volunteer.name %></p>
-    <% end%>
+  <% else%>
+    <p class="alert alert-warning">Sorry this job is already assigned to: <%= @job.volunteer.name %></p>
+  <% end %>
+<% else %>
+  <%= simple_form_for [@event, @job] do |f| %>
+    <%= f.hidden_field :assigned, value: true %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.button :submit, "Take this job", class:"btn btn-primary"  %>
+    <br>
+  <% end%>
 <% end%>
-
 <br>
 
-<% if user_signed_in? == @organisation.owner %>
+<% if current_user == @organisation.owner %>
   <ul class="list-group list-group-horizontal-sm">
   <%= link_to "Edit Job", edit_event_job_path, class:"btn btn-outline-warning btn-sm" %> <br>
   <%= link_to "Delete Job", event_job_path, method:"DELETE", data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" %><br>
