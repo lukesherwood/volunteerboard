@@ -2,7 +2,7 @@
     <%= f.input :title, label:"Job Title"%>
     <%= f.input :description, as: :text, label:"Job Description" %>
     <%= f.input :assigned, as: :radio_buttons, default: false %>
-    <%= f.input :work_type, collection: @types, label:"Select job type of work"%>
+    <%= f.input :work_type, collection: types, label:"Select job type of work"%>
     <%= f.hidden_field :location, value: @event.location%>
     <%= f.input :commitment, collection: ["part-time", "full-time", "one-off event", "recurring event"], label:"Job commitment"%>
     <%= f.association :volunteer, hint: "If assigned then who is this job assigned to?" %>

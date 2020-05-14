@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
     before_action :set_event, only: [:show, :edit, :update, :destroy]
-
+    
     def index
         if params[:organisation_slug]
             @organisation = Organisation.find_by_slug(params[:organisation_slug])
@@ -12,7 +12,6 @@ class EventsController < ApplicationController
 
     def new
         @event = Event.new
-        @types = ["Labouring", "Admin", "IT", "Childcare", "Working with animals", "Aged care", "Gardening", "Marketing", "Disability Support"]
         authorize @event
         @job = @event.jobs.build
     end
@@ -31,7 +30,6 @@ class EventsController < ApplicationController
     end
 
     def edit
-        @types = ["Labouring", "Admin", "IT", "Childcare", "Working with animals", "Aged care", "Gardening", "Marketing", "Disability Support"]
         authorize @event
     end
 
@@ -59,4 +57,5 @@ class EventsController < ApplicationController
     def set_event
         @event = Event.find(params[:id])
     end
+
 end
