@@ -5,19 +5,18 @@ Rails.application.routes.draw do
   resources :organisations, param: :slug do
     resources :events, only: [:index] # greenpeace/events
     resources :jobs, only: [:index] # greenpeace/jobs
+    get 'jobs/available', to: 'jobs#index_available'
   end
 
   resources :events do
+    get 'jobs/available', to: 'jobs#index_available'
     resources :jobs #monday_janboree/jobs/1/edit..
   end
 
   resources :jobs, only: [:index]
-
   get 'jobs/available', to: 'jobs#index_available'
   
   root to: "welcome#home"
-
-  
 
 end
 

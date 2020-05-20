@@ -23,8 +23,16 @@ class JobsController < ApplicationController
         end
     end
 
-    def index_available      
-        @jobs = Job.available
+    def index_available
+        if params[:organisation_slug]
+            @organisation = Organisation.find_by_slug(params[:organisation_slug])
+            @jobs = @organisation.jobs.available
+        elsif params[:event_id]
+            @event = Event.find(params[:event_id])
+            @jobs = @event.jobs.available
+        else
+            @jobs = Job.available
+        end
         render 'index'
     end
 

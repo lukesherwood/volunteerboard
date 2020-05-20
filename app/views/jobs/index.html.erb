@@ -1,10 +1,17 @@
 <h1>Jobs</h1>
 <br>
 <h3>Filter by:</h3>
-<%= link_to "Available Jobs", jobs_available_path %>
+<% if @organisation%>
+    <%= link_to "Available Jobs", organisation_jobs_available_path(@organisation.slug) %>
+    <br>
+    <%= link_to "All Jobs", organisation_jobs_path(@organisation.slug) %>
+<% else%>
+    <%= link_to "Available Jobs", jobs_available_path %>
+    <br>
+    <%= link_to "All Jobs", jobs_path %>
+<% end%>
 <br>
-<%= link_to "All Jobs", jobs_path %>
-<br>
+
 <% if @jobs.empty?%>
     <p>Sorry we don't have any jobs right now, check back later.</p>
     <%=link_to "Create a new Job", new_event_job_path(@event) if user_signed_in? && current_user == @event.organisation.owner%>

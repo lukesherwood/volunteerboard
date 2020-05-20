@@ -1,4 +1,7 @@
 **TODO:**
+if on org page or event page, available jobs should only show those belonging to
+
+make job.available used in chainable
 
 **extras for later**
 register organisation at same time as log in?
@@ -14,7 +17,6 @@ save or favourite job/organisation? then have your own page show favourites
 https://stackoverflow.com/questions/13240109/implement-add-to-favorites-in-rails-3-4
 
 **+++Last+++**
-30 min coding session record
 confirm meeting requirements by checking off list
 blog post
 video walkthru
