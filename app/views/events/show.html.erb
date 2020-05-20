@@ -2,6 +2,7 @@
 
 <div><h2>Jobs:</h2>
     <% if @event.jobs.present? %>
+        <h5>Filter by:</h5>
         <%= link_to "Available Jobs", event_jobs_available_path(@event) %>
         <br>
         <%= link_to "All Jobs", event_jobs_path(@event) %>

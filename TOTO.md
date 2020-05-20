@@ -1,7 +1,5 @@
 **TODO:**
-if on org page or event page, available jobs should only show those belonging to
-
-make job.available used in chainable
+need to check where links take you after being directed through events/orgs available/all
 
 **extras for later**
 register organisation at same time as log in?
