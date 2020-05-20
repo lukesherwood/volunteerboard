@@ -1,6 +1,5 @@
 **TODO:**
 add filter for organisation category?
-if organisation owned homepage directs to their org homepage
 
 **extras for later**
 register organisation at same time as log in?

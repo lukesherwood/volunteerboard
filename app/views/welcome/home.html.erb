@@ -6,6 +6,10 @@
 <% else%>
   <%= link_to "Volunteers Here", jobs_available_path %>
   <br>
-  <%= link_to "Organisation Owners Here", new_organisation_path %>
+  <% if current_user.organisation%>
+    <%= link_to "Organisation Owners Here", organisation_path(current_user.organisation.slug) %>
+  <% else %>
+    <%= link_to "Organisation Owners Here", new_organisation_path %>
+  <% end%>
 <% end%>
 <br>
