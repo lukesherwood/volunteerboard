@@ -23,7 +23,7 @@ class OrganisationPolicy < ApplicationPolicy
   end
  
   def destroy?
-    return true if user.present? && user == @organisation.owner
+    return true if user.present? && @user == @organisation.owner
   end
 
 end

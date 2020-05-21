@@ -5,7 +5,9 @@
             <% if job.assigned%>
                 <span class="badge badge-pill badge-secondary">Assigned</span>
             <% end %></h3> 
-            <p><strong>Location:</strong> <%= job.location %>
+            <p><strong>Organisation:</strong> <%= job.organisation.name %>
+            <br>
+            <strong>Location:</strong> <%= job.location %>
             <br>
             <strong>Work Type:</strong> <%= job.work_type %>
             <br>

@@ -9,6 +9,8 @@
  <p>Visit our website: <%= org.website %></p>
  <p><%= org.contact_info %></p>
  <p><%= org.mission %></p>
-
- <%= link_to "Edit Organisation", edit_organisation_path(org.slug), class:"btn btn-outline-warning btn-sm" if current_user == org.owner%>
+<% if current_user == org.owner%>
+    <%= link_to "Edit Organisation", edit_organisation_path(org.slug), class:"btn btn-outline-warning btn-sm" %>
+    <%= link_to "Delete Organisation", organisation_path(org.slug), method:"DELETE", data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" %>
+<% end%>
  </div>

@@ -1,5 +1,5 @@
 class OrganisationsController < ApplicationController
-    before_action :set_organisation, only: [:show, :edit, :delete, :update]
+    before_action :set_organisation, only: [:show, :edit, :destroy, :update]
 
     def index
         @orgs = Organisation.all
@@ -18,6 +18,7 @@ class OrganisationsController < ApplicationController
     def create
         @organisation = Organisation.new(organisation_params)
         @organisation.owner = current_user
+        current_user.organisation = @organisation
         if @organisation.save
             redirect_to organisation_path(@organisation.slug)
         else
@@ -39,8 +40,10 @@ class OrganisationsController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
         authorize @organisation
+        @organisation.destroy
+        redirect_to organisations_path
     end
 
     private
