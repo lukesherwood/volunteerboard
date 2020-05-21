@@ -19,7 +19,7 @@ class OrganisationsController < ApplicationController
         @organisation = Organisation.new(organisation_params)
         @organisation.owner = current_user
         current_user.organisation = @organisation
-        if @organisation.save
+        if @organisation.save && current_user.save
             redirect_to organisation_path(@organisation.slug)
         else
             render 'new'
