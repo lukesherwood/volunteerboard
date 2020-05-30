@@ -1,6 +1,8 @@
 **TODO:**
 update readme
 move bottom navbar to top
+check views logic is sensical ie can be read to know what its doing
+use .present or .blank?
 **extras for later**
 register organisation at same time as log in?
 
