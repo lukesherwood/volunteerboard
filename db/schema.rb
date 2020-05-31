@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2020_05_11_223239) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "events", force: :cascade do |t|
-    t.integer "organisation_id", null: false
+    t.bigint "organisation_id", null: false
     t.datetime "date"
     t.string "name"
     t.string "location"
@@ -25,8 +28,8 @@ ActiveRecord::Schema.define(version: 2020_05_11_223239) do
 
   create_table "jobs", force: :cascade do |t|
     t.string "title"
-    t.integer "event_id", null: false
-    t.integer "user_id"
+    t.bigint "event_id", null: false
+    t.bigint "user_id"
     t.string "description"
     t.boolean "assigned"
     t.datetime "created_at", precision: 6, null: false
