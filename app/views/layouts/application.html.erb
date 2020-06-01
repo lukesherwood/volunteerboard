@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <html lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--The above 3 meta tags *must* come first in the head; any other content must come *after*-->
     <title>Volunteerboard</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,7 +16,7 @@
     <%= javascript_include_tag "application" %>
   </head>
 
-  <body style="background-image: url('https://cdn.hipwallpaper.com/i/32/82/1gZVXJ.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <body>
     <%= render 'shared/navigationbar' %>
     <div class="view">
       <div class="container">
@@ -30,7 +35,6 @@
     <br>
     <br>
     <br>
-    <%= render 'shared/bottombar' %>
   </body>
   <footer>
   <br>

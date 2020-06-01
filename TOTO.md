@@ -1,5 +1,7 @@
 **TODO:**
+jobs index page broken
 update readme
+can import old database?
 move bottom navbar to top
 check views logic is sensical ie can be read to know what its doing
 use .present or .blank?

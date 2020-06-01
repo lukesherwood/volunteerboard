@@ -14,7 +14,6 @@
 
 <% if @jobs.empty?%>
     <p>Sorry we don't have any jobs right now, check back later.</p>
-    <%=link_to "Create a new Job", new_event_job_path(@event) if user_signed_in? && current_user == @event.organisation.owner%>
 <% else%>
     <%= render 'display_jobs', jobs: @jobs %>
     <% if @event%>
