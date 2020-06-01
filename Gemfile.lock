@@ -296,7 +296,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   web-console (>= 3.3.0)
   webdrivers
-  webpacker (~> 5.x)
+  webpacker
 
 RUBY VERSION
    ruby 2.6.1p33

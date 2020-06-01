@@ -5,7 +5,6 @@ class Organisation < ApplicationRecord
     has_many :jobs, through: :events
     validates :name, presence: true
     validates :location, presence: true
-    validates :category, presence: true
 
     def slug
         self.name.downcase.strip.gsub(' ', '-')
