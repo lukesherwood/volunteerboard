@@ -32,9 +32,7 @@
   body{
     background-color: #79d2a6;
     background-image: url('https://cdn.hipwallpaper.com/i/32/82/1gZVXJ.jpg');
-    /* Full height */
     height: 100%;
-    /* Center and scale the image nicely */
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -42,8 +40,7 @@
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    
-}
+  } 
  
 
 
