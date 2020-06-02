@@ -1,6 +1,4 @@
 **TODO:**
-fix top nav not displaying properly
-update readme
 can import old database?
 check views logic is sensical ie can be read to know what its doing
 use .present or .blank?
