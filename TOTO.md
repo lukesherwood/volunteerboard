@@ -1,5 +1,5 @@
 **TODO:**
-fix background image not displaying in mobile
+fix top nav not displaying properly
 update readme
 can import old database?
 check views logic is sensical ie can be read to know what its doing

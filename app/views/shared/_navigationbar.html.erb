@@ -10,15 +10,14 @@
          <li class="nav-item">
             <%= link_to "Organisations", organisations_path, class:"nav-link nav-top-link" %>
           </li>
-
           <li class="nav-item">
             <%= link_to "Events", events_path, class:"nav-link nav-top-link" %>
           </li>
-
           <li class="nav-item">
             <%= link_to "Jobs", jobs_path, class:"nav-link nav-top-link" %>
+          </li>
+
           <% if user_signed_in? %>
-            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle nav-top-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Make a new...
@@ -28,6 +27,7 @@
                 <%= link_to "Organisation", new_organisation_path, class:"dropdown-item" %>
             </li>
             </ul>
+
             <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <%= link_to 'Sign-out', destroy_user_session_path, method: :delete, class:"nav-link nav-top-link" %>
@@ -35,8 +35,9 @@
             <li class="nav-item">
                 <%= link_to 'User Account', edit_user_registration_path, class:"nav-link nav-top-link" %>
             </li>
-            </ul>
+
           <% else%>
+            </ul>
             <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <%= link_to 'Sign-in', new_user_session_path, class:"nav-link nav-top-link" %>
@@ -47,8 +48,8 @@
             <li class="nav-item">
                 <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class:"nav-link nav-top-link" %>
             </li>
-            </ul>
           <% end%>
-        </ul>
+          
+          </ul>
       </div>
 </nav>
