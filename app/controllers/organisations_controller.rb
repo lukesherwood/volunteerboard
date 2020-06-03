@@ -27,7 +27,6 @@ class OrganisationsController < ApplicationController
     end
 
     def edit
-        @categories = ["environmental", "health", "animal welfare", "disability services", "homelessness"]
         authorize @organisation
     end
 
