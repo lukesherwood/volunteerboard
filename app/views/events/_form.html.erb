@@ -1,6 +1,6 @@
 <%= simple_form_for [@event] do |f| %>
     <%= f.input :name %>
-    <%= f.input :date, value: Time.now %>
+    <%= f.input :date, as: :date, html5: true %>
     <%= f.input :location %>
     <%= f.input :information %>
     <%= f.hidden_field :organisation_id, value: current_user.organisation.id %>

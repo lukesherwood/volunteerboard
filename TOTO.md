@@ -3,6 +3,7 @@ can import old database?
 check views logic is sensical ie can be read to know what its doing
 use .present or .blank?
 update logic so job location can be inherited from new event form
+add time to datepicker new events
 **extras for later**
 register organisation at same time as log in?
 
