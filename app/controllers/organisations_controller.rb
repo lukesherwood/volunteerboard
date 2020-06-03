@@ -12,7 +12,7 @@ class OrganisationsController < ApplicationController
     def new
         @organisation = Organisation.new
         authorize @organisation
-        @categories = ["environmental", "health", "animal welfare", "disability services", "homelessness"]
+        
     end
 
     def create
