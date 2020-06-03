@@ -1,7 +1,9 @@
 **TODO:**
+add name to user form
 can import old database?
 check views logic is sensical ie can be read to know what its doing
 use .present or .blank?
+update logic so job location can be inherited from new event form
 **extras for later**
 register organisation at same time as log in?
 

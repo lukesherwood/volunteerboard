@@ -4,7 +4,6 @@ class Job < ApplicationRecord
     validates :title, presence: true
     validates :description, presence: true
     validates :work_type, presence: true
-    validates :location, presence: true
     validates :commitment, presence: true
     validates :volunteer, presence: { message: "must be provided if job is assigned" }, if: -> { assigned } 
     validates :volunteer, absence: { message: "must be blank if job is un-assigned" }, if: -> { !assigned } 
