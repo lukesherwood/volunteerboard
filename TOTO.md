@@ -1,7 +1,7 @@
 **TODO:**
+remove longest title scope method
+change name of heroku app, and make sure heroku git remote still works
 can import old database?
-check views logic is sensical ie can be read to know what its doing
-use .present or .blank?
 update logic so job location can be inherited from new event form
 add time to datepicker new events
 **extras for later**
