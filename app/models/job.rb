@@ -9,10 +9,13 @@ class Job < ApplicationRecord
     validates :volunteer, absence: { message: "must be blank if job is un-assigned" }, if: -> { !assigned } 
     scope :available, -> { where(assigned: false)}
 
+    scope :longesttitle, -> { where(MAX(LENGTH(title))) }
+ 
+    #order("MAX(CHAR_LENGTH(first_name)) desc").limit(1)
     def organisation
         self.event.organisation
     end
-
+    
     def organisation=(organisation)
         self.event.organisation = organisation
     end

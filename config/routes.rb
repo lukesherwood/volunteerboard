@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :jobs, only: [:index]
   get 'jobs/available', to: 'jobs#index_available'
+  get 'jobs/longesttitle', to: 'jobs#longest_title'
   
   root to: "welcome#home"
 

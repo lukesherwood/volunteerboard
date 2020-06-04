@@ -36,6 +36,10 @@ class JobsController < ApplicationController
         render 'index'
     end
 
+    def longest_title
+        @job = Job.longesttitle.first  
+    end
+
     def create
         @job = @event.jobs.build(job_params)
         authorize @job

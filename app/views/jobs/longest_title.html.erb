@@ -1,0 +1,11 @@
+<h1>Job with longest title award goes to: <%= @job.title %> </h1>
+<br>
+
+<h5>Location: <%= @job.location if @job.location%> </h5>
+<br>
+<h5>Type of work: <%= @job.work_type if @job.work_type%> </h5>
+<br>
+<h5>Time commitment required: <%= @job.commitment if @job.commitment%> </h5>
+<br>
+<h5><%= @job.description %> </h5>
+<br>
