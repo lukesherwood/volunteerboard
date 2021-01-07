@@ -1,6 +1,7 @@
 # README
 
 It can be a daunting and unnecessarily difficult process trying to find ways to donate your time to a meaningful cause. This Ruby on Rails application is designed to help volunteers find organizations and opportunities to help the community. It is also geared to Organization owners and staff quickly and easily posting opportunities and events so they can find qualified and motivated volunteers.
+https://i.imgur.com/yaNb2EF.gif
 
 ## Installation
 
